@@ -1,0 +1,15 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "assert": false,
+    "fetchMock": false,
+    "RestFetcher": false,
+    "PathRestFetcher": false
+  },
+
+  "rules": {
+    "max-nested-callbacks": 0
+  }
+}

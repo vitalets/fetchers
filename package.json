@@ -37,7 +37,7 @@
   "lint-staged": {
     "{src,test}/**/*.js": "eslint"
   },
-  "@std/esm":"js",
+  "@std/esm": "js",
   "dependencies": {},
   "devDependencies": {
     "@std/esm": "^0.15.0",
