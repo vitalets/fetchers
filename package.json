@@ -1,0 +1,68 @@
+{
+  "name": "fetchers",
+  "version": "0.1.0",
+  "description": "Semantic RESTful Fetch API wrappers",
+  "author": {
+    "name": "Vitaliy Potapov",
+    "email": "noginsk@rambler.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vitalets/fetchers.git"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "main": "dist/index.umd.js",
+  "scripts": {
+    "code": "npm run lint-all",
+    "lint-all": "eslint src test",
+    "lint-staged": "lint-staged",
+    "build": "webpack",
+    "test": "mocha test/specs -r @std/esm -r test/globals.js",
+    "test-dist": "npm run build && LIB_PATH=dist npm t",
+    "test-runtyper": "RUNTYPER=1 npm run build && LIB_PATH=.runtyper npm t",
+    "test-installed": "node scripts/install-local && LIB_PATH=.installed/node_modules/fetchers npm t",
+    "ci": "run-s code test-dist test-runtyper",
+    "docs": "node scripts/docs",
+    "prerelease": "run-s code test-dist test-runtyper test-installed",
+    "release": "npm version $VER && npm publish",
+    "postrelease": "git push --follow-tags --no-verify",
+    "release-patch": "VER=patch npm run release",
+    "release-minor": "VER=minor npm run release",
+    "diff": "git diff -- . ':!package-lock.json'",
+    "precommit": "run-s lint-staged test",
+    "prepush": "run-s code test test-runtyper"
+  },
+  "lint-staged": {
+    "{src,test}/**/*.js": "eslint"
+  },
+  "@std/esm":"js",
+  "dependencies": {},
+  "devDependencies": {
+    "@std/esm": "^0.15.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-runtyper": "^0.2.2",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "fetch-mock": "^5.13.1",
+    "husky": "^0.14.3",
+    "install-local": "^0.4.0",
+    "jsdoc-to-markdown": "^3.0.0",
+    "lint-staged": "^4.3.0",
+    "mocha": "^4.0.1",
+    "node-fetch": "^1.7.3",
+    "npm-run-all": "^4.1.1",
+    "webpack": "^3.8.1"
+  },
+  "keywords": [
+    "fetch",
+    "fetch-api",
+    "rest",
+    "restful",
+    "promise"
+  ],
+  "license": "MIT"
+}

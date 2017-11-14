@@ -1,0 +1,7 @@
+.idea
+.travis.yml
+.editorconfig
+.eslintrc
+
+/.runtyper/
+/.installed/
