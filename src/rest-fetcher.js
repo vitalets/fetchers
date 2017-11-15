@@ -19,4 +19,7 @@ export default class RestFetcher extends PathRestFetcher {
   async head(body, options) {
     return await super.head(null, body, options);
   }
+  async patch(body, options) {
+    return await super.patch(null, body, options);
+  }
 }

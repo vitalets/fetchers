@@ -2,7 +2,7 @@
   "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 2017,
-    "impliedStrict": true
+    "sourceType": "module"
   },
 
   "env": {
@@ -16,7 +16,7 @@
     "complexity": ["error", {"max" : 5}],
     "max-depth": ["error", {"max" : 2}],
     "max-nested-callbacks": ["error", {"max" : 2}],
-    "max-params": ["error", {"max" : 3}],
+    "max-params": ["error", {"max" : 4}],
     "max-statements": ["error", {"max" : 11}, {"ignoreTopLevelFunctions": false}],
     "max-len": ["error", {"code" : 120}],
     "max-lines": ["error", {"max": 170, "skipComments": true, "skipBlankLines": true}],
