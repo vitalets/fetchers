@@ -13,31 +13,36 @@
   "engines": {
     "node": ">=6"
   },
-  "main": "dist/index.umd.js",
+  "main": "dist/es2017/index.umd.js",
   "scripts": {
     "code": "npm run lint-all",
     "lint-all": "eslint src test",
     "lint-staged": "lint-staged",
-    "build": "webpack",
-    "test": "mocha test/specs -r @std/esm -r test/globals.js",
-    "test-dist": "npm run build && LIB_PATH=dist npm t",
-    "test-runtyper": "RUNTYPER=1 npm run build && LIB_PATH=.runtyper npm t",
+    "build-es5": "TARGET=es5 webpack",
+    "build-es2017": "TARGET=es2017 webpack",
+    "test": "npm run test-src",
+    "test-src": "mocha test/specs -r @std/esm -r test/globals.js",
+    "test-es5": "npm run build-es5 && LIB_PATH=dist/es5/index.umd.js npm t",
+    "test-es2017": "npm run build-es2017 && LIB_PATH=dist/es2017/index.umd.js npm t",
     "test-installed": "node scripts/install-local && LIB_PATH=.installed/node_modules/fetchers npm t",
     "ci": "run-s code test-dist test-runtyper",
     "docs": "node scripts/docs",
-    "prerelease": "run-s code test-dist test-runtyper test-installed",
+    "prerelease": "run-s code test-es5 test-es2017 test-installed",
     "release": "npm version $VER && npm publish",
     "postrelease": "git push --follow-tags --no-verify",
     "release-patch": "VER=patch npm run release",
     "release-minor": "VER=minor npm run release",
     "diff": "git diff -- . ':!package-lock.json'",
     "precommit": "run-s lint-staged test",
-    "prepush": "run-s code test test-runtyper"
+    "prepush": "run-s code test test-es5 test-es2017"
   },
   "lint-staged": {
     "{src,test}/**/*.js": "eslint"
   },
-  "@std/esm": "js",
+  "@std/esm": {
+    "esm": "js",
+    "cjs": true
+  },
   "dependencies": {},
   "devDependencies": {
     "@std/esm": "^0.15.0",
@@ -46,6 +51,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-runtyper": "^0.2.2",
     "babel-preset-env": "^1.6.1",
+    "babel-regenerator-runtime": "^6.5.0",
     "eslint": "^4.9.0",
     "eslint-plugin-mocha": "^4.11.0",
     "fetch-mock": "^5.13.1",
