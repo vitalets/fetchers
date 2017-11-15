@@ -20,25 +20,30 @@ npm install fetchers --save
 
 ## Usage
 ```js
-import {RESTFetcher} from 'fetchers';
+import {RestFetcher} from 'fetchers';
 
-// base url and default headers
-const fetcher = new RESTFetcher('http://example.com', {headers: {'Content-Type': 'application/json'}});
+// Create fetcher with default url and options
+const fetcher = new RestFetcher('http://example.com', {
+  credentials: 'include',
+  headers: {
+    Accept: 'application/json'
+  }
+});
 
 // GET
 fetcher.get()
   .then(response => response.json());
 
 // POST
-fetcher.post(JSON.stringify(data))
+fetcher.post(body)
   .then(response => response.json());
 
-// PUT
-fetcher.put(JSON.stringify(data))
+// POST with additional options
+fetcher.post(body, {mode: 'cors'})
   .then(response => response.json());
 
-// DELETE
-fetcher.del(JSON.stringify(data))
+// POST with additional headers
+fetcher.post(body, {headers: {'Content-Type': 'application/json'}})
   .then(response => response.json());
 ```
 ## API
