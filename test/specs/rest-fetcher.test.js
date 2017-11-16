@@ -52,12 +52,12 @@ describe('RestFetcher', function () {
     });
   });
   describe('Defaults', function () {
-    it('should overwrite default options', async function () {
+    it('overwrite default options', async function () {
       fetchMock.getOnce(url, {foo: 'bar'});
       await this.fetcher.get({mode: 'cors'});
       assert.deepEqual(fetchMock.lastOptions(url), {method: 'GET', mode: 'cors', body: null, headers});
     });
-    it('should append to default headers', async function () {
+    it('append to default headers', async function () {
       fetchMock.getOnce(url, {foo: 'bar'});
       await this.fetcher.get({headers: {
         'X-Custom-Header': 'bar'
@@ -67,7 +67,7 @@ describe('RestFetcher', function () {
         'X-Custom-Header': 'bar'
       }});
     });
-    it('should overwrite default headers', async function () {
+    it('overwrite default headers', async function () {
       fetchMock.getOnce(url, {foo: 'bar'});
       await this.fetcher.get({headers: {
         'Accept': '*/*',
