@@ -43,7 +43,7 @@
 <blockquote>
 <p>Semantic RESTful Fetch API wrappers</p>
 </blockquote>
-<p>A lightweight wrappers over <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> providing semantic syntax for <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> requests.</p>
+<p>A wrappers over <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.</p>
 <h2 id="contents">Contents</h2><ul>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
@@ -52,33 +52,57 @@
 </ul>
 <h2 id="installation">Installation</h2><pre><code class="lang-bash"><code class="source-code prettyprint">npm install fetchers --save</code>
 </code></pre>
-<h2 id="usage">Usage</h2><pre><code class="lang-js"><code class="source-code prettyprint">import {RestFetcher} from &apos;fetchers&apos;;
+<h2 id="usage">Usage</h2><ol>
+<li><p>Multiple REST requests to single url:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint"> import {RestFetcher} from &apos;fetchers&apos;;
 
-// Create fetcher with default url and options
-const fetcher = new RestFetcher(&apos;http://example.com&apos;, {
-  credentials: &apos;include&apos;,
-  headers: {
-    Accept: &apos;application/json&apos;
-  }
-});
+ // Create fetcher with default url and options
+ const fetcher = new RestFetcher(&apos;http://example.com&apos;, {
+   credentials: &apos;include&apos;,
+   headers: {
+     Accept: &apos;application/json&apos;
+   }
+ });
 
-// GET
-fetcher.get()
-  .then(response =&gt; response.json());
+ // GET http://example.com
+ fetcher.get()
+   .then(response =&gt; response.json());
 
-// POST
-fetcher.post(body)
-  .then(response =&gt; response.json());
+ // POST to http://example.com
+ fetcher.post(JSON.stringify(body))
+   .then(response =&gt; response.json());
 
-// POST with additional options
-fetcher.post(body, {mode: &apos;cors&apos;})
-  .then(response =&gt; response.json());
+ // POST to http://example.com with CORS mode
+ fetcher.post(JSON.stringify(body), {mode: &apos;cors&apos;})
+   .then(response =&gt; response.json());
 
-// POST with additional headers
-fetcher.post(body, {headers: {&apos;Content-Type&apos;: &apos;application/json&apos;}})
-  .then(response =&gt; response.json());</code>
+ // POST to http://example.com with additional header
+ fetcher.post(JSON.stringify(body), {headers: {&apos;Content-Type&apos;: &apos;application/json&apos;}})
+   .then(response =&gt; response.json());</code>
 </code></pre>
-<h2 id="api">API</h2><p>Please see <a href="https://vitalets.github.io/fetchers">vitalets.github.io/fetchers</a>.</p>
+</li>
+<li><p>Multiple REST requests to base url with different paths:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint"> import {PathRestFetcher} from &apos;fetchers&apos;;
+
+ // Create fetcher with base url
+ const fetcher = new PathRestFetcher(&apos;http://example.com&apos;);
+
+ // GET http://example.com/get
+ fetcher.get(&apos;/get&apos;)
+   .then(response =&gt; response.json());
+
+ // POST to http://example.com/post
+ fetcher.post(&apos;/post&apos;, JSON.stringify(body))
+   .then(response =&gt; response.json());
+
+ ...</code>
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>In Node.js you should provide <code>global.fetch()</code> for example from <a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> package</p>
+</blockquote>
+<h2 id="api">API</h2><p>Please see <a href="https://vitalets.github.io/fetchers/identifiers.html">online API Reference</a>.</p>
 <h2 id="license">License</h2><p>MIT @ <a href="https://github.com/vitalets">Vitaliy Potapov</a></p>
 </div>
 </div>
