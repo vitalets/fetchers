@@ -19,33 +19,56 @@ npm install fetchers --save
 ```
 
 ## Usage
-```js
-import {RestFetcher} from 'fetchers';
 
-// Create fetcher with default url and options
-const fetcher = new RestFetcher('http://example.com', {
-  credentials: 'include',
-  headers: {
-    Accept: 'application/json'
-  }
-});
+1. Multiple REST requests to single url:
+    ```js
+    import {RestFetcher} from 'fetchers';
+    
+    // Create fetcher with default url and options
+    const fetcher = new RestFetcher('http://example.com', {
+      credentials: 'include',
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+    
+    // GET http://example.com
+    fetcher.get()
+      .then(response => response.json());
+    
+    // POST to http://example.com
+    fetcher.post(JSON.stringify(body))
+      .then(response => response.json());
+    
+    // POST to http://example.com with CORS mode
+    fetcher.post(JSON.stringify(body), {mode: 'cors'})
+      .then(response => response.json());
+    
+    // POST to http://example.com with additional header
+    fetcher.post(JSON.stringify(body), {headers: {'Content-Type': 'application/json'}})
+      .then(response => response.json());
+    ```
 
-// GET
-fetcher.get()
-  .then(response => response.json());
+2. Multiple REST requests to base url with different paths:
+    ```js
+    import {PathRestFetcher} from 'fetchers';
+    
+    // Create fetcher with base url
+    const fetcher = new PathRestFetcher('http://example.com');
+    
+    // GET http://example.com/get
+    fetcher.get('/get')
+      .then(response => response.json());
+    
+    // POST to http://example.com/post
+    fetcher.post('/post', JSON.stringify(body))
+      .then(response => response.json());
+    
+    ...
+    ```
 
-// POST
-fetcher.post(body)
-  .then(response => response.json());
+> In Node.js you should provide `global.fetch()` for example from [node-fetch](https://www.npmjs.com/package/node-fetch) package
 
-// POST with additional options
-fetcher.post(body, {mode: 'cors'})
-  .then(response => response.json());
-
-// POST with additional headers
-fetcher.post(body, {headers: {'Content-Type': 'application/json'}})
-  .then(response => response.json());
-```
 ## API
 Please see [online API Reference](https://vitalets.github.io/fetchers/identifiers.html).
 
