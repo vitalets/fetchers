@@ -31,7 +31,7 @@
     "release-minor": "VER=minor npm run release",
     "diff": "git diff -- . ':!package-lock.json'",
     "precommit": "run-s lint-staged test",
-    "prepush": "run-s code test test-es5 test-es2017"
+    "prepush": "run-s code test test-es5"
   },
   "lint-staged": {
     "{src,test}/**/*.js": "eslint"
