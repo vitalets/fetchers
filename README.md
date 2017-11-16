@@ -47,7 +47,7 @@ fetcher.post(body, {headers: {'Content-Type': 'application/json'}})
   .then(response => response.json());
 ```
 ## API
-Please see [vitalets.github.io/fetchers](https://vitalets.github.io/fetchers).
+Please see [online API Reference](https://vitalets.github.io/fetchers/identifiers.html).
 
 ## License
 MIT @ [Vitaliy Potapov](https://github.com/vitalets)
