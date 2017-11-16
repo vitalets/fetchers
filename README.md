@@ -67,7 +67,7 @@ npm install fetchers --save
     ...
     ```
 
-> In Node.js you should provide `global.fetch()` for example from [node-fetch](https://www.npmjs.com/package/node-fetch) package
+> In Node.js you should provide `global.fetch()`. For example from [node-fetch](https://www.npmjs.com/package/node-fetch) package.
 
 ## API
 Please see [online API Reference](https://vitalets.github.io/fetchers/identifiers.html).
