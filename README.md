@@ -5,7 +5,7 @@
 
 > Semantic RESTful Fetch API wrappers
 
-A lightweight wrappers over [Fetch API] providing semantic syntax for [REST] requests.
+A wrappers over [Fetch API] providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.
 
 ## Contents
 * [Installation](#installation)
