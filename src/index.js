@@ -2,6 +2,10 @@
  * Fetchers
  */
 
+/**
+ * @external {RequestOptions} https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties
+ */
+
 import PathRestFetcher from './path-rest-fetcher';
 import RestFetcher from './rest-fetcher';
 

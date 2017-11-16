@@ -1,0 +1,24 @@
+{
+  "coverage": "72.72%",
+  "expectCount": 22,
+  "actualCount": 16,
+  "files": {
+    "src/path-rest-fetcher.js": {
+      "expectCount": 14,
+      "actualCount": 8,
+      "undocumentLines": [
+        23,
+        24,
+        97,
+        102,
+        113,
+        119
+      ]
+    },
+    "src/rest-fetcher.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    }
+  }
+}

@@ -1,26 +1,96 @@
 /**
- * Performs REST requests to base url with different paths
+ * Performs REST requests to persistent base url with different paths.
+ *
+ * @example
+ * import {PathRestFetcher} from 'fetchers';
+ *
+ * const fetcher = new PathRestFetcher('http://example.com', {credentials: 'include'});
+ *
+ * fetcher.get('/get')
+ *    .then(response => response.ok ? response.json() : response.statusText)
+ *    .then(data => console.log(data));
+ *
+ * fetcher.post('/post', JSON.stringify({foo: 'bar'}))
+ *    .then(response => response.ok ? response.json() : response.statusText)
+ *    .then(data => console.log(data));
  */
 export default class PathRestFetcher {
-  constructor(baseUrl, defaultOptions = {}) {
+  /**
+   * @param {String} [baseUrl='']
+   * @param {RequestOptions} [defaultOptions={}] default options used for every request
+   */
+  constructor(baseUrl = '', defaultOptions = {}) {
     this._baseUrl = baseUrl;
     this._defaultOptions = defaultOptions;
   }
+
+  /**
+   * Performs GET request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise<Response>}
+   */
   async get(path, options) {
     return this._fetch('GET', path, null, options);
   }
+
+  /**
+   * Performs POST request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise<Response>}
+   */
   async post(path, body, options) {
     return this._fetch('POST', path, body, options);
   }
+
+  /**
+   * Performs PUT request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise<Response>}
+   */
   async put(path, body, options) {
     return this._fetch('PUT', path, body, options);
   }
+
+  /**
+   * Performs DELETE request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise<Response>}
+   */
   async del(path, body, options) {
     return this._fetch('DELETE', path, body, options);
   }
+
+  /**
+   * Performs HEAD request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise<Response>}
+   */
   async head(path, body, options) {
     return this._fetch('HEAD', path, body, options);
   }
+
+  /**
+   * Performs PATCH request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise<Response>}
+   */
   async patch(path, body, options) {
     return this._fetch('PATCH', path, body, options);
   }

@@ -1,0 +1,1554 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/index.js",
+    "content": "/**\n * Fetchers\n */\n\n/**\n * @external {RequestOptions} https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties\n */\n\nimport PathRestFetcher from './path-rest-fetcher';\nimport RestFetcher from './rest-fetcher';\n\nexport {RestFetcher, PathRestFetcher};\nexport default {RestFetcher, PathRestFetcher};\n",
+    "static": true,
+    "longname": "/Users/vitalets/projects/fetchers/src/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "external",
+    "name": "RequestOptions",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~RequestOptions",
+    "access": "public",
+    "description": "",
+    "lineNumber": 9
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/path-rest-fetcher.js",
+    "content": "/**\n * Performs REST requests to persistent base url with different paths.\n *\n * @example\n * import {PathRestFetcher} from 'fetchers';\n *\n * const fetcher = new PathRestFetcher('http://example.com', {credentials: 'include'});\n *\n * fetcher.get('/get')\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n *\n * fetcher.post('/post', JSON.stringify({foo: 'bar'}))\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n */\nexport default class PathRestFetcher {\n  /**\n   * @param {String} [baseUrl='']\n   * @param {RequestOptions} [defaultOptions={}] default options used for every request\n   */\n  constructor(baseUrl = '', defaultOptions = {}) {\n    this._baseUrl = baseUrl;\n    this._defaultOptions = defaultOptions;\n  }\n\n  /**\n   * Performs GET request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async get(path, options) {\n    return this._fetch('GET', path, null, options);\n  }\n\n  /**\n   * Performs POST request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async post(path, body, options) {\n    return this._fetch('POST', path, body, options);\n  }\n\n  /**\n   * Performs PUT request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async put(path, body, options) {\n    return this._fetch('PUT', path, body, options);\n  }\n\n  /**\n   * Performs DELETE request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async del(path, body, options) {\n    return this._fetch('DELETE', path, body, options);\n  }\n\n  /**\n   * Performs HEAD request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async head(path, body, options) {\n    return this._fetch('HEAD', path, body, options);\n  }\n\n  /**\n   * Performs PATCH request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async patch(path, body, options) {\n    return this._fetch('PATCH', path, body, options);\n  }\n  async _fetch(method, path, body, options) {\n    const finalUrl = this._getFinalUrl(path);\n    const finalOptions = this._getOptions(method, body, options);\n    return await fetch(finalUrl, finalOptions);\n  }\n  _getFinalUrl(path) {\n    if (isAbsoluteUrl(path)) {\n      return path;\n    } else if (path) {\n      const baseUrl = this._baseUrl.replace(/\\/+$/g, '');\n      path = path.replace(/^\\/+/g, '');\n      return `${baseUrl}/${path}`;\n    } else {\n      return this._baseUrl;\n    }\n  }\n  _getOptions(method, body, options = {}) {\n    const headers = Object.assign({}, this._defaultOptions.headers, options.headers);\n    return Object.assign({}, this._defaultOptions, options, {method, body, headers});\n  }\n}\n\nfunction isAbsoluteUrl(str) {\n  return /^https?:\\/\\//i.test(str);\n}\n",
+    "static": true,
+    "longname": "/Users/vitalets/projects/fetchers/src/path-rest-fetcher.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "class",
+    "name": "PathRestFetcher",
+    "memberof": "src/path-rest-fetcher.js",
+    "static": true,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher",
+    "access": "public",
+    "export": true,
+    "importPath": "fetchers/src/path-rest-fetcher.js",
+    "importStyle": "PathRestFetcher",
+    "description": "Performs REST requests to persistent base url with different paths.",
+    "examples": [
+      "import {PathRestFetcher} from 'fetchers';\n\nconst fetcher = new PathRestFetcher('http://example.com', {credentials: 'include'});\n\nfetcher.get('/get')\n   .then(response => response.ok ? response.json() : response.statusText)\n   .then(data => console.log(data));\n\nfetcher.post('/post', JSON.stringify({foo: 'bar'}))\n   .then(response => response.ok ? response.json() : response.statusText)\n   .then(data => console.log(data));"
+    ],
+    "lineNumber": 17,
+    "interface": false
+  },
+  {
+    "__docId__": 52,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 22,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "''",
+        "defaultRaw": "''",
+        "name": "baseUrl",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "{}",
+        "defaultRaw": {},
+        "name": "defaultOptions",
+        "description": "default options used for every request"
+      }
+    ]
+  },
+  {
+    "__docId__": 53,
+    "kind": "member",
+    "name": "_baseUrl",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_baseUrl",
+    "access": "private",
+    "description": null,
+    "lineNumber": 23,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 54,
+    "kind": "member",
+    "name": "_defaultOptions",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_defaultOptions",
+    "access": "private",
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "get",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#get",
+    "access": "public",
+    "description": "Performs GET request to url path.",
+    "lineNumber": 34,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "method",
+    "name": "post",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#post",
+    "access": "public",
+    "description": "Performs POST request to url path.",
+    "lineNumber": 46,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "put",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#put",
+    "access": "public",
+    "description": "Performs PUT request to url path.",
+    "lineNumber": 58,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 58,
+    "kind": "method",
+    "name": "del",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#del",
+    "access": "public",
+    "description": "Performs DELETE request to url path.",
+    "lineNumber": 70,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "method",
+    "name": "head",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#head",
+    "access": "public",
+    "description": "Performs HEAD request to url path.",
+    "lineNumber": 82,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "method",
+    "name": "patch",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#patch",
+    "access": "public",
+    "description": "Performs PATCH request to url path.",
+    "lineNumber": 94,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "_fetch",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_fetch",
+    "access": "private",
+    "description": null,
+    "lineNumber": 97,
+    "undocument": true,
+    "ignore": true,
+    "params": [
+      {
+        "name": "method",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "body",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "_getFinalUrl",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_getFinalUrl",
+    "access": "private",
+    "description": null,
+    "lineNumber": 102,
+    "undocument": true,
+    "ignore": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "_getOptions",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_getOptions",
+    "access": "private",
+    "description": null,
+    "lineNumber": 113,
+    "undocument": true,
+    "ignore": true,
+    "params": [
+      {
+        "name": "method",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "body",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "options",
+        "optional": true,
+        "types": [
+          "{}"
+        ],
+        "defaultRaw": {},
+        "defaultValue": "{}"
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "isAbsoluteUrl",
+    "memberof": "src/path-rest-fetcher.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/path-rest-fetcher.js~isAbsoluteUrl",
+    "access": "public",
+    "export": false,
+    "importPath": "fetchers/src/path-rest-fetcher.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 119,
+    "undocument": true,
+    "params": [
+      {
+        "name": "str",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "name": "src/rest-fetcher.js",
+    "content": "import PathRestFetcher from './path-rest-fetcher';\n\n/**\n * Performs REST requests to persistent url.\n *\n * @example\n * import {RestFetcher} from 'fetchers';\n *\n * const fetcher = new RestFetcher('http://example.com', {credentials: 'include'});\n *\n * fetcher.get()\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n */\nexport default class RestFetcher extends PathRestFetcher {\n  /**\n   * @param {String} url url used for every request\n   * @param {RequestOptions} [defaultOptions={}] default options used for every request\n   */\n  constructor(url, defaultOptions = {}) {\n    super(url, defaultOptions);\n  }\n\n  /**\n   * Performs GET request.\n   *\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async get(options) {\n    return await super.get(null, options);\n  }\n\n  /**\n   * Performs POST request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async post(body, options) {\n    return await super.post(null, body, options);\n  }\n\n  /**\n   * Performs PUT request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async put(body, options) {\n    return await super.put(null, body, options);\n  }\n\n  /**\n   * Performs DELETE request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async del(body, options) {\n    return await super.del(null, body, options);\n  }\n\n  /**\n   * Performs HEAD request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async head(body, options) {\n    return await super.head(null, body, options);\n  }\n\n  /**\n   * Performs PATCH request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async patch(body, options) {\n    return await super.patch(null, body, options);\n  }\n}\n",
+    "static": true,
+    "longname": "/Users/vitalets/projects/fetchers/src/rest-fetcher.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "class",
+    "name": "RestFetcher",
+    "memberof": "src/rest-fetcher.js",
+    "static": true,
+    "longname": "src/rest-fetcher.js~RestFetcher",
+    "access": "public",
+    "export": true,
+    "importPath": "fetchers/src/rest-fetcher.js",
+    "importStyle": "RestFetcher",
+    "description": "Performs REST requests to persistent url.",
+    "examples": [
+      "import {RestFetcher} from 'fetchers';\n\nconst fetcher = new RestFetcher('http://example.com', {credentials: 'include'});\n\nfetcher.get()\n   .then(response => response.ok ? response.json() : response.statusText)\n   .then(data => console.log(data));"
+    ],
+    "lineNumber": 15,
+    "interface": false,
+    "extends": [
+      "src/path-rest-fetcher.js~PathRestFetcher"
+    ]
+  },
+  {
+    "__docId__": 67,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 20,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "url",
+        "description": "url used for every request"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "{}",
+        "defaultRaw": {},
+        "name": "defaultOptions",
+        "description": "default options used for every request"
+      }
+    ]
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "get",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#get",
+    "access": "public",
+    "description": "Performs GET request.",
+    "lineNumber": 30,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "method",
+    "name": "post",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#post",
+    "access": "public",
+    "description": "Performs POST request.",
+    "lineNumber": 41,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "put",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#put",
+    "access": "public",
+    "description": "Performs PUT request.",
+    "lineNumber": 52,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "del",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#del",
+    "access": "public",
+    "description": "Performs DELETE request.",
+    "lineNumber": 63,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "head",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#head",
+    "access": "public",
+    "description": "Performs HEAD request.",
+    "lineNumber": 74,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "patch",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#patch",
+    "access": "public",
+    "description": "Performs PATCH request.",
+    "lineNumber": 85,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "kind": "index",
+    "content": "# fetchers\n[![Build Status](https://travis-ci.org/vitalets/fetchers.svg?branch=master)](https://travis-ci.org/vitalets/fetchers)\n[![npm](https://img.shields.io/npm/v/fetchers.svg)](https://www.npmjs.com/package/fetchers)\n[![license](https://img.shields.io/npm/l/fetchers.svg)](https://www.npmjs.com/package/fetchers)\n\n> Semantic RESTful Fetch API wrappers\n\nA lightweight wrappers over [Fetch API] providing semantic syntax for [REST] requests.\n\n## Contents\n* [Installation](#installation)\n* [Usage](#usage)\n* [API](#api)\n* [License](#license)\n\n## Installation\n```bash\nnpm install fetchers --save\n```\n\n## Usage\n```js\nimport {RestFetcher} from 'fetchers';\n\n// Create fetcher with default url and options\nconst fetcher = new RestFetcher('http://example.com', {\n  credentials: 'include',\n  headers: {\n    Accept: 'application/json'\n  }\n});\n\n// GET\nfetcher.get()\n  .then(response => response.json());\n\n// POST\nfetcher.post(body)\n  .then(response => response.json());\n\n// POST with additional options\nfetcher.post(body, {mode: 'cors'})\n  .then(response => response.json());\n\n// POST with additional headers\nfetcher.post(body, {headers: {'Content-Type': 'application/json'}})\n  .then(response => response.json());\n```\n## API\n<a name=\"RestFetcher\"></a>\n\n### RestFetcher\nPerforms REST requests to single url\n\n**Kind**: global class  \n<a name=\"RestFetcher.get\"></a>\n\n#### RestFetcher.get(options)\n**Kind**: static method of [<code>RestFetcher</code>](#RestFetcher)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| options | <code>Object</code> | default fetch() options |\n\n## License\nMIT @ [Vitaliy Potapov](https://github.com/vitalets)\n\n[REST]: https://en.wikipedia.org/wiki/Representational_state_transfer\n[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API\n",
+    "longname": "/Users/vitalets/projects/fetchers/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"fetchers\",\n  \"version\": \"0.1.0\",\n  \"description\": \"Semantic RESTful Fetch API wrappers\",\n  \"author\": {\n    \"name\": \"Vitaliy Potapov\",\n    \"email\": \"noginsk@rambler.ru\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git://github.com/vitalets/fetchers.git\"\n  },\n  \"engines\": {\n    \"node\": \">=6\"\n  },\n  \"main\": \"dist/es2017/index.umd.js\",\n  \"scripts\": {\n    \"code\": \"npm run lint-all\",\n    \"lint-all\": \"eslint src test\",\n    \"lint-staged\": \"lint-staged\",\n    \"build-es5\": \"TARGET=es5 webpack\",\n    \"build-es2017\": \"TARGET=es2017 webpack\",\n    \"test\": \"npm run test-src\",\n    \"test-src\": \"mocha test/specs -r @std/esm -r test/globals.js\",\n    \"test-es5\": \"npm run build-es5 && LIB_PATH=dist/es5/index.umd.js npm t\",\n    \"test-es2017\": \"npm run build-es2017 && LIB_PATH=dist/es2017/index.umd.js npm t\",\n    \"test-installed\": \"node scripts/install-local && LIB_PATH=.installed/node_modules/fetchers npm t\",\n    \"ci\": \"run-s code test-dist test-runtyper\",\n    \"docs\": \"esdoc\",\n    \"prerelease\": \"run-s code test-es5 test-es2017 test-installed\",\n    \"release\": \"npm version $VER && npm publish\",\n    \"postrelease\": \"git push --follow-tags --no-verify\",\n    \"release-patch\": \"VER=patch npm run release\",\n    \"release-minor\": \"VER=minor npm run release\",\n    \"diff\": \"git diff -- . ':!package-lock.json'\",\n    \"precommit\": \"run-s lint-staged test\",\n    \"prepush\": \"run-s code test test-es5 test-es2017\"\n  },\n  \"lint-staged\": {\n    \"{src,test}/**/*.js\": \"eslint\"\n  },\n  \"@std/esm\": {\n    \"esm\": \"js\",\n    \"cjs\": true\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"@std/esm\": \"^0.15.0\",\n    \"babel-cli\": \"^6.24.1\",\n    \"babel-core\": \"^6.26.0\",\n    \"babel-loader\": \"^7.1.2\",\n    \"babel-plugin-runtyper\": \"^0.2.2\",\n    \"babel-preset-env\": \"^1.6.1\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^4.9.0\",\n    \"eslint-plugin-mocha\": \"^4.11.0\",\n    \"fetch-mock\": \"^5.13.1\",\n    \"husky\": \"^0.14.3\",\n    \"install-local\": \"^0.4.0\",\n    \"lint-staged\": \"^4.3.0\",\n    \"mocha\": \"^4.0.1\",\n    \"node-fetch\": \"^1.7.3\",\n    \"npm-run-all\": \"^4.1.1\",\n    \"webpack\": \"^3.8.1\"\n  },\n  \"keywords\": [\n    \"fetch\",\n    \"fetch-api\",\n    \"rest\",\n    \"restful\",\n    \"promise\"\n  ],\n  \"license\": \"MIT\"\n}\n",
+    "longname": "/Users/vitalets/projects/fetchers/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

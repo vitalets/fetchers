@@ -1,0 +1,210 @@
+{
+  "type": "File",
+  "start": 0,
+  "end": 385,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 24,
+      "column": 0
+    }
+  },
+  "program": {
+    "type": "Program",
+    "start": 0,
+    "end": 385,
+    "loc": {
+      "start": {
+        "line": 1,
+        "column": 0
+      },
+      "end": {
+        "line": 24,
+        "column": 0
+      }
+    },
+    "sourceType": "module",
+    "body": [],
+    "directives": [],
+    "leadingComments": null,
+    "innerComments": [
+      {
+        "type": "CommentBlock",
+        "value": "*\n * Currently jsdoc-to-markdown can't parse sync method named as \"get\":\n *\n * async get(options) {\n *  ...\n * }\n *\n * Until it will be fixed geenrate docs from separate file.\n ",
+        "start": 0,
+        "end": 181,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 0
+          },
+          "end": {
+            "line": 9,
+            "column": 3
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n * @name RestFetcher\n * @class\n * @classdesc Performs REST requests to single url\n *\n ",
+        "start": 183,
+        "end": 275,
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 0
+          },
+          "end": {
+            "line": 16,
+            "column": 3
+          }
+        }
+      },
+      {
+        "type": "CommentBlock",
+        "value": "*\n * @name get\n * @method\n * @memberof RestFetcher\n * @param {Object} options default fetch() options\n ",
+        "start": 277,
+        "end": 384,
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 0
+          },
+          "end": {
+            "line": 23,
+            "column": 3
+          }
+        }
+      }
+    ]
+  },
+  "comments": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Currently jsdoc-to-markdown can't parse sync method named as \"get\":\n *\n * async get(options) {\n *  ...\n * }\n *\n * Until it will be fixed geenrate docs from separate file.\n ",
+      "start": 0,
+      "end": 181,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * @name RestFetcher\n * @class\n * @classdesc Performs REST requests to single url\n *\n ",
+      "start": 183,
+      "end": 275,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * @name get\n * @method\n * @memberof RestFetcher\n * @param {Object} options default fetch() options\n ",
+      "start": 277,
+      "end": 384,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 3
+        }
+      }
+    }
+  ],
+  "tokens": [
+    {
+      "type": "CommentBlock",
+      "value": "*\n * Currently jsdoc-to-markdown can't parse sync method named as \"get\":\n *\n * async get(options) {\n *  ...\n * }\n *\n * Until it will be fixed geenrate docs from separate file.\n ",
+      "start": 0,
+      "end": 181,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 9,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * @name RestFetcher\n * @class\n * @classdesc Performs REST requests to single url\n *\n ",
+      "start": 183,
+      "end": 275,
+      "loc": {
+        "start": {
+          "line": 11,
+          "column": 0
+        },
+        "end": {
+          "line": 16,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "CommentBlock",
+      "value": "*\n * @name get\n * @method\n * @memberof RestFetcher\n * @param {Object} options default fetch() options\n ",
+      "start": 277,
+      "end": 384,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 0
+        },
+        "end": {
+          "line": 23,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "eof",
+        "beforeExpr": false,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 385,
+      "end": 385,
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 0
+        }
+      }
+    }
+  ]
+}

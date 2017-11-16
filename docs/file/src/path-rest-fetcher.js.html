@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/path-rest-fetcher.js | fetchers</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Semantic RESTful Fetch API wrappers"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="fetchers"><meta property="twitter:description" content="Semantic RESTful Fetch API wrappers"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html">RestFetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/path-rest-fetcher.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * Performs REST requests to persistent base url with different paths.
+ *
+ * @example
+ * import {PathRestFetcher} from &apos;fetchers&apos;;
+ *
+ * const fetcher = new PathRestFetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;});
+ *
+ * fetcher.get(&apos;/get&apos;)
+ *    .then(response =&gt; response.ok ? response.json() : response.statusText)
+ *    .then(data =&gt; console.log(data));
+ *
+ * fetcher.post(&apos;/post&apos;, JSON.stringify({foo: &apos;bar&apos;}))
+ *    .then(response =&gt; response.ok ? response.json() : response.statusText)
+ *    .then(data =&gt; console.log(data));
+ */
+export default class PathRestFetcher {
+  /**
+   * @param {String} [baseUrl=&apos;&apos;]
+   * @param {RequestOptions} [defaultOptions={}] default options used for every request
+   */
+  constructor(baseUrl = &apos;&apos;, defaultOptions = {}) {
+    this._baseUrl = baseUrl;
+    this._defaultOptions = defaultOptions;
+  }
+
+  /**
+   * Performs GET request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise&lt;Response&gt;}
+   */
+  async get(path, options) {
+    return this._fetch(&apos;GET&apos;, path, null, options);
+  }
+
+  /**
+   * Performs POST request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise&lt;Response&gt;}
+   */
+  async post(path, body, options) {
+    return this._fetch(&apos;POST&apos;, path, body, options);
+  }
+
+  /**
+   * Performs PUT request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise&lt;Response&gt;}
+   */
+  async put(path, body, options) {
+    return this._fetch(&apos;PUT&apos;, path, body, options);
+  }
+
+  /**
+   * Performs DELETE request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise&lt;Response&gt;}
+   */
+  async del(path, body, options) {
+    return this._fetch(&apos;DELETE&apos;, path, body, options);
+  }
+
+  /**
+   * Performs HEAD request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise&lt;Response&gt;}
+   */
+  async head(path, body, options) {
+    return this._fetch(&apos;HEAD&apos;, path, body, options);
+  }
+
+  /**
+   * Performs PATCH request to url path.
+   *
+   * @param {String} [path] path added to base url
+   * @param {*} [body] request body
+   * @param {RequestOptions} [options] custom options
+   * @returns {Promise&lt;Response&gt;}
+   */
+  async patch(path, body, options) {
+    return this._fetch(&apos;PATCH&apos;, path, body, options);
+  }
+  async _fetch(method, path, body, options) {
+    const finalUrl = this._getFinalUrl(path);
+    const finalOptions = this._getOptions(method, body, options);
+    return await fetch(finalUrl, finalOptions);
+  }
+  _getFinalUrl(path) {
+    if (isAbsoluteUrl(path)) {
+      return path;
+    } else if (path) {
+      const baseUrl = this._baseUrl.replace(/\/+$/g, &apos;&apos;);
+      path = path.replace(/^\/+/g, &apos;&apos;);
+      return `${baseUrl}/${path}`;
+    } else {
+      return this._baseUrl;
+    }
+  }
+  _getOptions(method, body, options = {}) {
+    const headers = Object.assign({}, this._defaultOptions.headers, options.headers);
+    return Object.assign({}, this._defaultOptions, options, {method, body, headers});
+  }
+}
+
+function isAbsoluteUrl(str) {
+  return /^https?:\/\//i.test(str);
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
