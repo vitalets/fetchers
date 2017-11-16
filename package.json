@@ -10,9 +10,6 @@
     "type": "git",
     "url": "git://github.com/vitalets/fetchers.git"
   },
-  "engines": {
-    "node": ">=6"
-  },
   "main": "dist/es2017/index.umd.js",
   "scripts": {
     "code": "npm run lint-all",
@@ -25,9 +22,9 @@
     "test-es5": "npm run build-es5 && LIB_PATH=dist/es5/index.umd.js npm t",
     "test-es2017": "npm run build-es2017 && LIB_PATH=dist/es2017/index.umd.js npm t",
     "test-installed": "node scripts/install-local && LIB_PATH=.installed/node_modules/fetchers npm t",
-    "ci": "run-s code test-dist test-runtyper",
+    "ci": "run-s code test test-es5 test-es2017 test-installed",
     "docs": "esdoc",
-    "prerelease": "run-s code test-es5 test-es2017 test-installed",
+    "prerelease": "run-s code test test-es5 test-es2017 test-installed",
     "release": "npm version $VER && npm publish",
     "postrelease": "git push --follow-tags --no-verify",
     "release-patch": "VER=patch npm run release",
