@@ -51,6 +51,7 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-runtyper": "^0.2.2",
     "babel-preset-env": "^1.6.1",
+    "babel-regenerator-runtime": "^6.5.0",
     "esdoc": "^1.0.4",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.9.0",
