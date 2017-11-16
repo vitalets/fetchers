@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/index.js",
-    "content": "/**\n * Fetchers\n */\n\n/**\n * @external {RequestOptions} https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties\n */\n\nimport PathRestFetcher from './path-rest-fetcher';\nimport RestFetcher from './rest-fetcher';\n\nexport {RestFetcher, PathRestFetcher};\nexport default {RestFetcher, PathRestFetcher};\n",
+    "content": "/**\n * Fetchers\n */\n\n/**\n * @external {RequestOptions} https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties\n */\n\n/**\n * @typedef {Object} Handlers\n * @property {Function} handleRequestBody function applied to every request body,\n * e.g. `body => JSON.stringify(body)`\n * @property {Function} handleResponse function applied to every response,\n * e.g. `async response => await response.json()`\n */\n\nimport PathRestFetcher from './path-rest-fetcher';\nimport RestFetcher from './rest-fetcher';\n\nexport {RestFetcher, PathRestFetcher};\nexport default {RestFetcher, PathRestFetcher};\n",
     "static": true,
     "longname": "/Users/vitalets/projects/fetchers/src/index.js",
     "access": "public",
@@ -583,14 +583,53 @@
     "static": true,
     "longname": "src/index.js~RequestOptions",
     "access": "public",
-    "description": "",
-    "lineNumber": 9
+    "description": ""
   },
   {
     "__docId__": 50,
+    "kind": "typedef",
+    "name": "Handlers",
+    "memberof": "src/index.js",
+    "static": true,
+    "longname": "src/index.js~Handlers",
+    "access": "public",
+    "description": "",
+    "lineNumber": 17,
+    "properties": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "handleRequestBody",
+        "description": "function applied to every request body,\ne.g. `body => JSON.stringify(body)`"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "handleResponse",
+        "description": "function applied to every response,\ne.g. `async response => await response.json()`"
+      }
+    ],
+    "type": {
+      "types": [
+        "Object"
+      ],
+      "optional": false,
+      "name": "Handlers"
+    }
+  },
+  {
+    "__docId__": 51,
     "kind": "file",
     "name": "src/path-rest-fetcher.js",
-    "content": "/**\n * Performs REST requests to persistent base url with different paths.\n *\n * @example\n * import {PathRestFetcher} from 'fetchers';\n *\n * const fetcher = new PathRestFetcher('http://example.com', {credentials: 'include'});\n *\n * fetcher.get('/get')\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n *\n * fetcher.post('/post', JSON.stringify({foo: 'bar'}))\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n */\nexport default class PathRestFetcher {\n  /**\n   * @param {String} [baseUrl='']\n   * @param {RequestOptions} [defaultOptions={}] default options used for every request\n   */\n  constructor(baseUrl = '', defaultOptions = {}) {\n    this._baseUrl = baseUrl;\n    this._defaultOptions = defaultOptions;\n  }\n\n  /**\n   * Performs GET request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async get(path, options) {\n    return this._fetch('GET', path, null, options);\n  }\n\n  /**\n   * Performs POST request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async post(path, body, options) {\n    return this._fetch('POST', path, body, options);\n  }\n\n  /**\n   * Performs PUT request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async put(path, body, options) {\n    return this._fetch('PUT', path, body, options);\n  }\n\n  /**\n   * Performs DELETE request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async del(path, body, options) {\n    return this._fetch('DELETE', path, body, options);\n  }\n\n  /**\n   * Performs HEAD request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async head(path, body, options) {\n    return this._fetch('HEAD', path, body, options);\n  }\n\n  /**\n   * Performs PATCH request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async patch(path, body, options) {\n    return this._fetch('PATCH', path, body, options);\n  }\n  async _fetch(method, path, body, options) {\n    const finalUrl = this._getFinalUrl(path);\n    const finalOptions = this._getOptions(method, body, options);\n    return await fetch(finalUrl, finalOptions);\n  }\n  _getFinalUrl(path) {\n    if (isAbsoluteUrl(path)) {\n      return path;\n    } else if (path) {\n      const baseUrl = this._baseUrl.replace(/\\/+$/g, '');\n      path = path.replace(/^\\/+/g, '');\n      return `${baseUrl}/${path}`;\n    } else {\n      return this._baseUrl;\n    }\n  }\n  _getOptions(method, body, options = {}) {\n    const headers = Object.assign({}, this._defaultOptions.headers, options.headers);\n    return Object.assign({}, this._defaultOptions, options, {method, body, headers});\n  }\n}\n\nfunction isAbsoluteUrl(str) {\n  return /^https?:\\/\\//i.test(str);\n}\n",
+    "content": "/**\n * Performs REST requests to persistent base url with different paths.\n *\n * @example\n * import {PathRestFetcher} from 'fetchers';\n *\n * const fetcher = new PathRestFetcher('http://example.com', {credentials: 'include'});\n *\n * fetcher.get('/get')\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n *\n * fetcher.post('/post', JSON.stringify({foo: 'bar'}))\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n */\nexport default class PathRestFetcher {\n  /**\n   * @param {String} [baseUrl='']\n   * @param {RequestOptions} [defaultOptions={}] default options used for every request\n   * @param {Handlers} [handlers={}] functions for processing every request and response\n   */\n  constructor(baseUrl = '', defaultOptions = {}, handlers = {}) {\n    this._baseUrl = baseUrl;\n    this._defaultOptions = defaultOptions;\n    this._handlers = handlers;\n  }\n\n  /**\n   * Performs GET request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async get(path, options) {\n    return this._fetch('GET', path, null, options);\n  }\n\n  /**\n   * Performs POST request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async post(path, body, options) {\n    return this._fetch('POST', path, body, options);\n  }\n\n  /**\n   * Performs PUT request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async put(path, body, options) {\n    return this._fetch('PUT', path, body, options);\n  }\n\n  /**\n   * Performs DELETE request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async del(path, body, options) {\n    return this._fetch('DELETE', path, body, options);\n  }\n\n  /**\n   * Performs HEAD request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async head(path, body, options) {\n    return this._fetch('HEAD', path, body, options);\n  }\n\n  /**\n   * Performs PATCH request to url path.\n   *\n   * @param {String} [path] path added to base url\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async patch(path, body, options) {\n    return this._fetch('PATCH', path, body, options);\n  }\n  async _fetch(method, path, body, options) {\n    const finalUrl = this._getFinalUrl(path);\n    const finalOptions = this._getOptions(method, body, options);\n    const response = await fetch(finalUrl, finalOptions);\n    return this._handlers.handleResponse\n      ? await this._handlers.handleResponse(response, finalOptions)\n      : response;\n  }\n  _getFinalUrl(path) {\n    if (isAbsoluteUrl(path)) {\n      return path;\n    } else if (path) {\n      const baseUrl = this._baseUrl.replace(/\\/+$/g, '');\n      path = path.replace(/^\\/+/g, '');\n      return `${baseUrl}/${path}`;\n    } else {\n      return this._baseUrl;\n    }\n  }\n  _getOptions(method, body, options) {\n    const headers = Object.assign({}, this._defaultOptions.headers, options && options.headers);\n    if (method !== 'GET' && this._handlers.handleRequestBody) {\n      body = this._handlers.handleRequestBody(body);\n    }\n    return Object.assign({}, this._defaultOptions, options, {method, body, headers});\n  }\n}\n\nfunction isAbsoluteUrl(str) {\n  return /^https?:\\/\\//i.test(str);\n}\n",
     "static": true,
     "longname": "/Users/vitalets/projects/fetchers/src/path-rest-fetcher.js",
     "access": "public",
@@ -598,7 +637,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 51,
+    "__docId__": 52,
     "kind": "class",
     "name": "PathRestFetcher",
     "memberof": "src/path-rest-fetcher.js",
@@ -616,7 +655,7 @@
     "interface": false
   },
   {
-    "__docId__": 52,
+    "__docId__": 53,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
@@ -626,7 +665,7 @@
     "longname": "src/path-rest-fetcher.js~PathRestFetcher#constructor",
     "access": "public",
     "description": "",
-    "lineNumber": 22,
+    "lineNumber": 23,
     "params": [
       {
         "nullable": null,
@@ -651,34 +690,28 @@
         "defaultRaw": {},
         "name": "defaultOptions",
         "description": "default options used for every request"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Handlers"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "{}",
+        "defaultRaw": {},
+        "name": "handlers",
+        "description": "functions for processing every request and response"
       }
     ]
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "member",
     "name": "_baseUrl",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
     "static": false,
     "longname": "src/path-rest-fetcher.js~PathRestFetcher#_baseUrl",
-    "access": "private",
-    "description": null,
-    "lineNumber": 23,
-    "undocument": true,
-    "ignore": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 54,
-    "kind": "member",
-    "name": "_defaultOptions",
-    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
-    "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_defaultOptions",
     "access": "private",
     "description": null,
     "lineNumber": 24,
@@ -692,6 +725,42 @@
   },
   {
     "__docId__": 55,
+    "kind": "member",
+    "name": "_defaultOptions",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_defaultOptions",
+    "access": "private",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "_handlers",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_handlers",
+    "access": "private",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "ignore": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
     "kind": "method",
     "name": "get",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
@@ -701,7 +770,7 @@
     "longname": "src/path-rest-fetcher.js~PathRestFetcher#get",
     "access": "public",
     "description": "Performs GET request to url path.",
-    "lineNumber": 34,
+    "lineNumber": 36,
     "unknown": [
       {
         "tagName": "@returns",
@@ -718,124 +787,6 @@
         "optional": true,
         "name": "path",
         "description": "path added to base url"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "RequestOptions"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "options",
-        "description": "custom options"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<Response>"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 56,
-    "kind": "method",
-    "name": "post",
-    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
-    "generator": false,
-    "async": true,
-    "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#post",
-    "access": "public",
-    "description": "Performs POST request to url path.",
-    "lineNumber": 46,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{Promise<Response>}"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "String"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "path",
-        "description": "path added to base url"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "*"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "body",
-        "description": "request body"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "RequestOptions"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "options",
-        "description": "custom options"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<Response>"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 57,
-    "kind": "method",
-    "name": "put",
-    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
-    "generator": false,
-    "async": true,
-    "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#put",
-    "access": "public",
-    "description": "Performs PUT request to url path.",
-    "lineNumber": 58,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{Promise<Response>}"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "String"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "path",
-        "description": "path added to base url"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "*"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "body",
-        "description": "request body"
       },
       {
         "nullable": null,
@@ -860,15 +811,15 @@
   {
     "__docId__": 58,
     "kind": "method",
-    "name": "del",
+    "name": "post",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
     "generator": false,
     "async": true,
     "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#del",
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#post",
     "access": "public",
-    "description": "Performs DELETE request to url path.",
-    "lineNumber": 70,
+    "description": "Performs POST request to url path.",
+    "lineNumber": 48,
     "unknown": [
       {
         "tagName": "@returns",
@@ -919,15 +870,15 @@
   {
     "__docId__": 59,
     "kind": "method",
-    "name": "head",
+    "name": "put",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
     "generator": false,
     "async": true,
     "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#head",
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#put",
     "access": "public",
-    "description": "Performs HEAD request to url path.",
-    "lineNumber": 82,
+    "description": "Performs PUT request to url path.",
+    "lineNumber": 60,
     "unknown": [
       {
         "tagName": "@returns",
@@ -978,15 +929,15 @@
   {
     "__docId__": 60,
     "kind": "method",
-    "name": "patch",
+    "name": "del",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
     "generator": false,
     "async": true,
     "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#patch",
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#del",
     "access": "public",
-    "description": "Performs PATCH request to url path.",
-    "lineNumber": 94,
+    "description": "Performs DELETE request to url path.",
+    "lineNumber": 72,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1037,6 +988,124 @@
   {
     "__docId__": 61,
     "kind": "method",
+    "name": "head",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#head",
+    "access": "public",
+    "description": "Performs HEAD request to url path.",
+    "lineNumber": 84,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "patch",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#patch",
+    "access": "public",
+    "description": "Performs PATCH request to url path.",
+    "lineNumber": 96,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "path",
+        "description": "path added to base url"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
     "name": "_fetch",
     "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
     "generator": false,
@@ -1045,7 +1114,7 @@
     "longname": "src/path-rest-fetcher.js~PathRestFetcher#_fetch",
     "access": "private",
     "description": null,
-    "lineNumber": 97,
+    "lineNumber": 99,
     "undocument": true,
     "ignore": true,
     "params": [
@@ -1072,77 +1141,6 @@
         "types": [
           "*"
         ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 62,
-    "kind": "method",
-    "name": "_getFinalUrl",
-    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_getFinalUrl",
-    "access": "private",
-    "description": null,
-    "lineNumber": 102,
-    "undocument": true,
-    "ignore": true,
-    "params": [
-      {
-        "name": "path",
-        "types": [
-          "*"
-        ]
-      }
-    ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 63,
-    "kind": "method",
-    "name": "_getOptions",
-    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_getOptions",
-    "access": "private",
-    "description": null,
-    "lineNumber": 113,
-    "undocument": true,
-    "ignore": true,
-    "params": [
-      {
-        "name": "method",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "body",
-        "types": [
-          "*"
-        ]
-      },
-      {
-        "name": "options",
-        "optional": true,
-        "types": [
-          "{}"
-        ],
-        "defaultRaw": {},
-        "defaultValue": "{}"
       }
     ],
     "return": {
@@ -1153,6 +1151,74 @@
   },
   {
     "__docId__": 64,
+    "kind": "method",
+    "name": "_getFinalUrl",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_getFinalUrl",
+    "access": "private",
+    "description": null,
+    "lineNumber": 107,
+    "undocument": true,
+    "ignore": true,
+    "params": [
+      {
+        "name": "path",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "_getOptions",
+    "memberof": "src/path-rest-fetcher.js~PathRestFetcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/path-rest-fetcher.js~PathRestFetcher#_getOptions",
+    "access": "private",
+    "description": null,
+    "lineNumber": 118,
+    "undocument": true,
+    "ignore": true,
+    "params": [
+      {
+        "name": "method",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "body",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "options",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
     "kind": "function",
     "name": "isAbsoluteUrl",
     "memberof": "src/path-rest-fetcher.js",
@@ -1165,7 +1231,7 @@
     "importPath": "fetchers/src/path-rest-fetcher.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 119,
+    "lineNumber": 127,
     "undocument": true,
     "params": [
       {
@@ -1183,10 +1249,10 @@
     "ignore": true
   },
   {
-    "__docId__": 65,
+    "__docId__": 67,
     "kind": "file",
     "name": "src/rest-fetcher.js",
-    "content": "import PathRestFetcher from './path-rest-fetcher';\n\n/**\n * Performs REST requests to persistent url.\n *\n * @example\n * import {RestFetcher} from 'fetchers';\n *\n * const fetcher = new RestFetcher('http://example.com', {credentials: 'include'});\n *\n * fetcher.get()\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n */\nexport default class RestFetcher extends PathRestFetcher {\n  /**\n   * @param {String} url url used for every request\n   * @param {RequestOptions} [defaultOptions={}] default options used for every request\n   */\n  constructor(url, defaultOptions = {}) {\n    super(url, defaultOptions);\n  }\n\n  /**\n   * Performs GET request.\n   *\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async get(options) {\n    return await super.get(null, options);\n  }\n\n  /**\n   * Performs POST request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async post(body, options) {\n    return await super.post(null, body, options);\n  }\n\n  /**\n   * Performs PUT request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async put(body, options) {\n    return await super.put(null, body, options);\n  }\n\n  /**\n   * Performs DELETE request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async del(body, options) {\n    return await super.del(null, body, options);\n  }\n\n  /**\n   * Performs HEAD request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async head(body, options) {\n    return await super.head(null, body, options);\n  }\n\n  /**\n   * Performs PATCH request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async patch(body, options) {\n    return await super.patch(null, body, options);\n  }\n}\n",
+    "content": "import PathRestFetcher from './path-rest-fetcher';\n\n/**\n * Performs REST requests to persistent url.\n *\n * @example\n * import {RestFetcher} from 'fetchers';\n *\n * const fetcher = new RestFetcher('http://example.com', {credentials: 'include'});\n *\n * fetcher.get()\n *    .then(response => response.ok ? response.json() : response.statusText)\n *    .then(data => console.log(data));\n */\nexport default class RestFetcher extends PathRestFetcher {\n  /**\n   * @param {String} url url used for every request\n   * @param {RequestOptions} [defaultOptions={}] default options used for every request\n   * @param {Handlers} [handlers={}] functions for processing every request and response\n   */\n  constructor(url, defaultOptions = {}, handlers = {}) {\n    super(url, defaultOptions, handlers);\n  }\n\n  /**\n   * Performs GET request.\n   *\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async get(options) {\n    return await super.get(null, options);\n  }\n\n  /**\n   * Performs POST request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async post(body, options) {\n    return await super.post(null, body, options);\n  }\n\n  /**\n   * Performs PUT request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async put(body, options) {\n    return await super.put(null, body, options);\n  }\n\n  /**\n   * Performs DELETE request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async del(body, options) {\n    return await super.del(null, body, options);\n  }\n\n  /**\n   * Performs HEAD request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async head(body, options) {\n    return await super.head(null, body, options);\n  }\n\n  /**\n   * Performs PATCH request.\n   *\n   * @param {*} [body] request body\n   * @param {RequestOptions} [options] custom options\n   * @returns {Promise<Response>}\n   */\n  async patch(body, options) {\n    return await super.patch(null, body, options);\n  }\n}\n",
     "static": true,
     "longname": "/Users/vitalets/projects/fetchers/src/rest-fetcher.js",
     "access": "public",
@@ -1194,7 +1260,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 66,
+    "__docId__": 68,
     "kind": "class",
     "name": "RestFetcher",
     "memberof": "src/rest-fetcher.js",
@@ -1215,7 +1281,7 @@
     ]
   },
   {
-    "__docId__": 67,
+    "__docId__": 69,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/rest-fetcher.js~RestFetcher",
@@ -1225,7 +1291,7 @@
     "longname": "src/rest-fetcher.js~RestFetcher#constructor",
     "access": "public",
     "description": "",
-    "lineNumber": 20,
+    "lineNumber": 21,
     "params": [
       {
         "nullable": null,
@@ -1248,11 +1314,23 @@
         "defaultRaw": {},
         "name": "defaultOptions",
         "description": "default options used for every request"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Handlers"
+        ],
+        "spread": false,
+        "optional": true,
+        "defaultValue": "{}",
+        "defaultRaw": {},
+        "name": "handlers",
+        "description": "functions for processing every request and response"
       }
     ]
   },
   {
-    "__docId__": 68,
+    "__docId__": 70,
     "kind": "method",
     "name": "get",
     "memberof": "src/rest-fetcher.js~RestFetcher",
@@ -1262,7 +1340,7 @@
     "longname": "src/rest-fetcher.js~RestFetcher#get",
     "access": "public",
     "description": "Performs GET request.",
-    "lineNumber": 30,
+    "lineNumber": 31,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1270,104 +1348,6 @@
       }
     ],
     "params": [
-      {
-        "nullable": null,
-        "types": [
-          "RequestOptions"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "options",
-        "description": "custom options"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<Response>"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 69,
-    "kind": "method",
-    "name": "post",
-    "memberof": "src/rest-fetcher.js~RestFetcher",
-    "generator": false,
-    "async": true,
-    "static": false,
-    "longname": "src/rest-fetcher.js~RestFetcher#post",
-    "access": "public",
-    "description": "Performs POST request.",
-    "lineNumber": 41,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{Promise<Response>}"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "*"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "body",
-        "description": "request body"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "RequestOptions"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "options",
-        "description": "custom options"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Promise<Response>"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 70,
-    "kind": "method",
-    "name": "put",
-    "memberof": "src/rest-fetcher.js~RestFetcher",
-    "generator": false,
-    "async": true,
-    "static": false,
-    "longname": "src/rest-fetcher.js~RestFetcher#put",
-    "access": "public",
-    "description": "Performs PUT request.",
-    "lineNumber": 52,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{Promise<Response>}"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "*"
-        ],
-        "spread": false,
-        "optional": true,
-        "name": "body",
-        "description": "request body"
-      },
       {
         "nullable": null,
         "types": [
@@ -1391,15 +1371,15 @@
   {
     "__docId__": 71,
     "kind": "method",
-    "name": "del",
+    "name": "post",
     "memberof": "src/rest-fetcher.js~RestFetcher",
     "generator": false,
     "async": true,
     "static": false,
-    "longname": "src/rest-fetcher.js~RestFetcher#del",
+    "longname": "src/rest-fetcher.js~RestFetcher#post",
     "access": "public",
-    "description": "Performs DELETE request.",
-    "lineNumber": 63,
+    "description": "Performs POST request.",
+    "lineNumber": 42,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1440,15 +1420,15 @@
   {
     "__docId__": 72,
     "kind": "method",
-    "name": "head",
+    "name": "put",
     "memberof": "src/rest-fetcher.js~RestFetcher",
     "generator": false,
     "async": true,
     "static": false,
-    "longname": "src/rest-fetcher.js~RestFetcher#head",
+    "longname": "src/rest-fetcher.js~RestFetcher#put",
     "access": "public",
-    "description": "Performs HEAD request.",
-    "lineNumber": 74,
+    "description": "Performs PUT request.",
+    "lineNumber": 53,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1489,6 +1469,104 @@
   {
     "__docId__": 73,
     "kind": "method",
+    "name": "del",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#del",
+    "access": "public",
+    "description": "Performs DELETE request.",
+    "lineNumber": 64,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "name": "head",
+    "memberof": "src/rest-fetcher.js~RestFetcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "src/rest-fetcher.js~RestFetcher#head",
+    "access": "public",
+    "description": "Performs HEAD request.",
+    "lineNumber": 75,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{Promise<Response>}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "*"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "body",
+        "description": "request body"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "RequestOptions"
+        ],
+        "spread": false,
+        "optional": true,
+        "name": "options",
+        "description": "custom options"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<Response>"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
     "name": "patch",
     "memberof": "src/rest-fetcher.js~RestFetcher",
     "generator": false,
@@ -1497,7 +1575,7 @@
     "longname": "src/rest-fetcher.js~RestFetcher#patch",
     "access": "public",
     "description": "Performs PATCH request.",
-    "lineNumber": 85,
+    "lineNumber": 86,
     "unknown": [
       {
         "tagName": "@returns",
@@ -1537,7 +1615,7 @@
   },
   {
     "kind": "index",
-    "content": "# fetchers\n[![Build Status](https://travis-ci.org/vitalets/fetchers.svg?branch=master)](https://travis-ci.org/vitalets/fetchers)\n[![npm](https://img.shields.io/npm/v/fetchers.svg)](https://www.npmjs.com/package/fetchers)\n[![license](https://img.shields.io/npm/l/fetchers.svg)](https://www.npmjs.com/package/fetchers)\n\n> Semantic RESTful Fetch API wrappers\n\nA lightweight wrappers over [Fetch API] providing semantic syntax for [REST] requests.\n\n## Contents\n* [Installation](#installation)\n* [Usage](#usage)\n* [API](#api)\n* [License](#license)\n\n## Installation\n```bash\nnpm install fetchers --save\n```\n\n## Usage\n```js\nimport {RestFetcher} from 'fetchers';\n\n// Create fetcher with default url and options\nconst fetcher = new RestFetcher('http://example.com', {\n  credentials: 'include',\n  headers: {\n    Accept: 'application/json'\n  }\n});\n\n// GET\nfetcher.get()\n  .then(response => response.json());\n\n// POST\nfetcher.post(body)\n  .then(response => response.json());\n\n// POST with additional options\nfetcher.post(body, {mode: 'cors'})\n  .then(response => response.json());\n\n// POST with additional headers\nfetcher.post(body, {headers: {'Content-Type': 'application/json'}})\n  .then(response => response.json());\n```\n## API\n<a name=\"RestFetcher\"></a>\n\n### RestFetcher\nPerforms REST requests to single url\n\n**Kind**: global class  \n<a name=\"RestFetcher.get\"></a>\n\n#### RestFetcher.get(options)\n**Kind**: static method of [<code>RestFetcher</code>](#RestFetcher)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| options | <code>Object</code> | default fetch() options |\n\n## License\nMIT @ [Vitaliy Potapov](https://github.com/vitalets)\n\n[REST]: https://en.wikipedia.org/wiki/Representational_state_transfer\n[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API\n",
+    "content": "# fetchers\n[![Build Status](https://travis-ci.org/vitalets/fetchers.svg?branch=master)](https://travis-ci.org/vitalets/fetchers)\n[![npm](https://img.shields.io/npm/v/fetchers.svg)](https://www.npmjs.com/package/fetchers)\n[![license](https://img.shields.io/npm/l/fetchers.svg)](https://www.npmjs.com/package/fetchers)\n\n> Semantic RESTful Fetch API wrappers\n\nA lightweight wrappers over [Fetch API] providing semantic syntax for [REST] requests.\n\n## Contents\n* [Installation](#installation)\n* [Usage](#usage)\n* [API](#api)\n* [License](#license)\n\n## Installation\n```bash\nnpm install fetchers --save\n```\n\n## Usage\n```js\nimport {RestFetcher} from 'fetchers';\n\n// Create fetcher with default url and options\nconst fetcher = new RestFetcher('http://example.com', {\n  credentials: 'include',\n  headers: {\n    Accept: 'application/json'\n  }\n});\n\n// GET\nfetcher.get()\n  .then(response => response.json());\n\n// POST\nfetcher.post(body)\n  .then(response => response.json());\n\n// POST with additional options\nfetcher.post(body, {mode: 'cors'})\n  .then(response => response.json());\n\n// POST with additional headers\nfetcher.post(body, {headers: {'Content-Type': 'application/json'}})\n  .then(response => response.json());\n```\n## API\nPlease see [vitalets.github.io/fetchers](https://vitalets.github.io/fetchers).\n\n## License\nMIT @ [Vitaliy Potapov](https://github.com/vitalets)\n\n[REST]: https://en.wikipedia.org/wiki/Representational_state_transfer\n[Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API\n",
     "longname": "/Users/vitalets/projects/fetchers/README.md",
     "name": "./README.md",
     "static": true,

@@ -16,9 +16,10 @@ export default class RestFetcher extends PathRestFetcher {
   /**
    * @param {String} url url used for every request
    * @param {RequestOptions} [defaultOptions={}] default options used for every request
+   * @param {Handlers} [handlers={}] functions for processing every request and response
    */
-  constructor(url, defaultOptions = {}) {
-    super(url, defaultOptions);
+  constructor(url, defaultOptions = {}, handlers = {}) {
+    super(url, defaultOptions, handlers);
   }
 
   /**

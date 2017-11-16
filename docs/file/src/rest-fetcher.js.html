@@ -31,6 +31,7 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html">RestFetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span></span></li>
 </ul>
 </div>
@@ -55,9 +56,10 @@ export default class RestFetcher extends PathRestFetcher {
   /**
    * @param {String} url url used for every request
    * @param {RequestOptions} [defaultOptions={}] default options used for every request
+   * @param {Handlers} [handlers={}] functions for processing every request and response
    */
-  constructor(url, defaultOptions = {}) {
-    super(url, defaultOptions);
+  constructor(url, defaultOptions = {}, handlers = {}) {
+    super(url, defaultOptions, handlers);
   }
 
   /**

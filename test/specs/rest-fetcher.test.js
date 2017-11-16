@@ -77,4 +77,24 @@ describe('RestFetcher', function () {
       }});
     });
   });
+  describe('Handlers', function () {
+    it('handleRequestBody', async function () {
+      const fetcher = new RestFetcher(url, {}, {
+        handleRequestBody: body => JSON.stringify(body)
+      });
+      fetchMock.postOnce(url, {});
+      const body = {x: 1};
+      const response = await fetcher.post(body);
+      assert.deepEqual(fetchMock.lastOptions(url), {method: 'POST', body: JSON.stringify(body), headers: {}});
+      assert.ok(response.ok);
+    });
+    it('handleResponse', async function () {
+      const fetcher = new RestFetcher(url, {}, {
+        handleResponse: async response => await response.json()
+      });
+      fetchMock.getOnce(url, {foo: 'bar'});
+      const json = await fetcher.get();
+      assert.deepEqual(json, {foo: 'bar'});
+    });
+  });
 });

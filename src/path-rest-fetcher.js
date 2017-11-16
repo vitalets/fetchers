@@ -18,10 +18,12 @@ export default class PathRestFetcher {
   /**
    * @param {String} [baseUrl='']
    * @param {RequestOptions} [defaultOptions={}] default options used for every request
+   * @param {Handlers} [handlers={}] functions for processing every request and response
    */
-  constructor(baseUrl = '', defaultOptions = {}) {
+  constructor(baseUrl = '', defaultOptions = {}, handlers = {}) {
     this._baseUrl = baseUrl;
     this._defaultOptions = defaultOptions;
+    this._handlers = handlers;
   }
 
   /**
@@ -97,7 +99,10 @@ export default class PathRestFetcher {
   async _fetch(method, path, body, options) {
     const finalUrl = this._getFinalUrl(path);
     const finalOptions = this._getOptions(method, body, options);
-    return await fetch(finalUrl, finalOptions);
+    const response = await fetch(finalUrl, finalOptions);
+    return this._handlers.handleResponse
+      ? await this._handlers.handleResponse(response, finalOptions)
+      : response;
   }
   _getFinalUrl(path) {
     if (isAbsoluteUrl(path)) {
@@ -110,8 +115,11 @@ export default class PathRestFetcher {
       return this._baseUrl;
     }
   }
-  _getOptions(method, body, options = {}) {
-    const headers = Object.assign({}, this._defaultOptions.headers, options.headers);
+  _getOptions(method, body, options) {
+    const headers = Object.assign({}, this._defaultOptions.headers, options && options.headers);
+    if (method !== 'GET' && this._handlers.handleRequestBody) {
+      body = this._handlers.handleRequestBody(body);
+    }
     return Object.assign({}, this._defaultOptions, options, {method, body, headers});
   }
 }

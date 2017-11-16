@@ -300,6 +300,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/index.js~handlers",
+    "typedef/index.html#static-typedef-Handlers",
+    "src/index.js~Handlers",
+    "typedef"
+  ],
+  [
     "src/index.js~requestoptions",
     "https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties",
     "src/index.js~RequestOptions",

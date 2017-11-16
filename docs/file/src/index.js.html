@@ -31,6 +31,7 @@
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html">RestFetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span></span></li>
 </ul>
 </div>
@@ -43,6 +44,14 @@
 
 /**
  * @external {RequestOptions} https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties
+ */
+
+/**
+ * @typedef {Object} Handlers
+ * @property {Function} handleRequestBody function applied to every request body,
+ * e.g. `body =&gt; JSON.stringify(body)`
+ * @property {Function} handleResponse function applied to every response,
+ * e.g. `async response =&gt; await response.json()`
  */
 
 import PathRestFetcher from &apos;./path-rest-fetcher&apos;;

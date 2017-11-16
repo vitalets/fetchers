@@ -145,4 +145,24 @@ describe('PathRestFetcher', function () {
       await checkJoinUrl('http://test.com//', '///foo', 'http://test.com/foo');
     });
   });
+  describe('Handlers', function () {
+    it('handleRequestBody', async function () {
+      const fetcher = new PathRestFetcher(baseUrl, {}, {
+        handleRequestBody: body => JSON.stringify(body)
+      });
+      fetchMock.postOnce(url, {});
+      const body = {x: 1};
+      const response = await fetcher.post(path, body);
+      assert.deepEqual(fetchMock.lastOptions(url), {method: 'POST', body: JSON.stringify(body), headers: {}});
+      assert.ok(response.ok);
+    });
+    it('handleResponse', async function () {
+      const fetcher = new PathRestFetcher(baseUrl, {}, {
+        handleResponse: async response => await response.json()
+      });
+      fetchMock.getOnce(url, {foo: 'bar'});
+      const json = await fetcher.get(path);
+      assert.deepEqual(json, {foo: 'bar'});
+    });
+  });
 });
