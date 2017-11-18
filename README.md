@@ -8,10 +8,14 @@
 A wrappers over [Fetch API] providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.
 
 ## Contents
+* [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
 * [API](#api)
 * [License](#license)
+
+## Requirements
+The only requirement is global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).
 
 ## Installation
 ```bash
