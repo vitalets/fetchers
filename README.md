@@ -43,7 +43,7 @@ The advantages over bare `.fetch()` are following:
 ## Requirements
 The only requirement is global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).  
 All major browsers already [support it](https://caniuse.com/#feat=fetch),
-for others you can use [fetch polifill](https://github.com/github/fetch).
+for others you can use [fetch polyfill](https://github.com/github/fetch).
 In Node.js consider [node-fetch](https://www.npmjs.com/package/node-fetch) package.
 
 ## Installation
