@@ -5,17 +5,46 @@
 
 > Semantic RESTful Fetch API wrappers
 
-A wrappers over [Fetch API] providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.
+A set of wrappers over [Fetch API] providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.
 
 ## Contents
+* [Quick example](#quick-example)
+* [Features](#features)
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
 * [API](#api)
 * [License](#license)
 
+## Quick example
+```js
+import {RestFetcher} from 'fetchers';
+
+// Create fetcher with default url, default options and default response handler
+const fetcher = new RestFetcher('http://example.com', {credentials: 'include'}, {
+  handleResponse: async response => await response.json()
+});
+
+// REST requests to http://example.com
+fetcher.get().then(json => console.log(json));
+fetcher.post(data).then(json => console.log(json));
+fetcher.put(data).then(json => console.log(json));
+fetcher.del().then(json => console.log(json));
+```
+
+## Features
+The advantages over bare `.fetch()` are following:
+
+* Default url used for every request with optional relative path
+* Default options and headers applied to every request
+* Default handlers for request and response
+* Semantic REST methods: `get()`, `post()`, `put()`, `del()`, `head()` and `patch()`
+
 ## Requirements
-The only requirement is global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).
+The only requirement is global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).  
+All major browsers already [support it](https://caniuse.com/#feat=fetch),
+for others you can use [fetch polifill](https://github.com/github/fetch).
+In Node.js consider [node-fetch](https://www.npmjs.com/package/node-fetch) package.
 
 ## Installation
 ```bash
@@ -70,8 +99,6 @@ npm install fetchers --save
     
     ...
     ```
-
-> In Node.js you should provide `global.fetch()`. For example from [node-fetch](https://www.npmjs.com/package/node-fetch) package.
 
 ## API
 Please see [online API Reference](https://vitalets.github.io/fetchers/identifiers.html).
