@@ -3,7 +3,12 @@
   "expectCount": 23,
   "actualCount": 16,
   "files": {
-    "src/path-rest-fetcher.js": {
+    "src/fetcher.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/path-fetcher.js": {
       "expectCount": 15,
       "actualCount": 8,
       "undocumentLines": [
@@ -15,11 +20,6 @@
         118,
         127
       ]
-    },
-    "src/rest-fetcher.js": {
-      "expectCount": 8,
-      "actualCount": 8,
-      "undocumentLines": []
     }
   }
 }

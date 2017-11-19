@@ -18,10 +18,10 @@ A set of wrappers over [Fetch API] providing semantic methods for GET, POST, PUT
 
 ## Quick example
 ```js
-import {RestFetcher} from 'fetchers';
+import {Fetcher} from 'fetchers';
 
 // Create fetcher with default url, default options and default response handler
-const fetcher = new RestFetcher('http://example.com', {credentials: 'include'}, {
+const fetcher = new Fetcher('http://example.com', {credentials: 'include'}, {
   handleResponse: async response => await response.json()
 });
 
@@ -55,10 +55,10 @@ npm install fetchers --save
 
 1. Multiple REST requests to single url:
     ```js
-    import {RestFetcher} from 'fetchers';
+    import {Fetcher} from 'fetchers';
     
     // Create fetcher with default url and options
-    const fetcher = new RestFetcher('http://example.com', {
+    const fetcher = new Fetcher('http://example.com', {
       credentials: 'include',
       headers: {
         Accept: 'application/json'
@@ -84,10 +84,10 @@ npm install fetchers --save
 
 2. Multiple REST requests to base url with different paths:
     ```js
-    import {PathRestFetcher} from 'fetchers';
+    import {PathFetcher} from 'fetchers';
     
     // Create fetcher with base url
-    const fetcher = new PathRestFetcher('http://example.com');
+    const fetcher = new PathFetcher('http://example.com');
     
     // GET http://example.com/get
     fetcher.get('/get')

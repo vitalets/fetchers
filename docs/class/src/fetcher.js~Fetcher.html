@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">RestFetcher | fetchers</title>
+  <title data-ice="title">Fetcher | fetchers</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -29,8 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html">RestFetcher</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html">Fetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html">PathFetcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span></span></li>
 </ul>
@@ -38,23 +38,23 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import RestFetcher from &apos;<span><a href="file/src/rest-fetcher.js.html#lineNumber15">fetchers/src/rest-fetcher.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Fetcher from &apos;<span><a href="file/src/fetcher.js.html#lineNumber15">fetchers/src/fetcher.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/src/rest-fetcher.js.html#lineNumber15">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/fetcher.js.html#lineNumber15">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">RestFetcher</h1>
+  <h1 data-ice="name">Fetcher</h1>
 
   
 
   
   
-  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span> &#x2192; RestFetcher</div></div>
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/path-fetcher.js~PathFetcher.html">PathFetcher</a></span> &#x2192; Fetcher</div></div>
   
   
   
@@ -75,9 +75,9 @@
     
   <div class="example-doc" data-ice="exampleDoc">
       
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">import {RestFetcher} from &apos;fetchers&apos;;
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">import {Fetcher} from &apos;fetchers&apos;;
 
-const fetcher = new RestFetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;});
+const fetcher = new Fetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;});
 
 fetcher.get()
    .then(response =&gt; response.ok ? response.json() : response.statusText)
@@ -110,7 +110,7 @@ fetcher.get()
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, defaultOptions: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>, handlers: <span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span>)</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, defaultOptions: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>, handlers: <span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span>)</span>
         </p>
       </div>
       <div>
@@ -146,7 +146,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-method-del">del</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-method-del">del</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -175,7 +175,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-method-get">get</a></span></span><span class="code" data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-method-get">get</a></span></span><span class="code" data-ice="signature">(options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -204,7 +204,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-method-head">head</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-method-head">head</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -233,7 +233,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-method-patch">patch</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-method-patch">patch</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -262,7 +262,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-method-post">post</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-method-post">post</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -291,7 +291,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html#instance-method-put">put</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html#instance-method-put">put</a></span></span><span class="code" data-ice="signature">(body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -311,7 +311,7 @@ fetcher.get()
 </div>
 
 <div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
-  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></td></tr></thead>
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/path-fetcher.js~PathFetcher.html">PathFetcher</a></span></td></tr></thead>
   <tbody>
   
   <tr data-ice="target">
@@ -328,7 +328,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-del">del</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-del">del</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -357,7 +357,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-get">get</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-get">get</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -386,7 +386,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-head">head</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-head">head</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -415,7 +415,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-patch">patch</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-patch">patch</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -444,7 +444,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-post">post</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-post">post</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -473,7 +473,7 @@ fetcher.get()
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-put">put</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
+          <span class="code" data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-put">put</a></span></span><span class="code" data-ice="signature">(path: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></span>, body: <span>*</span>, options: <span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span>&lt;<span>Response</span>&gt;</span>
         </p>
       </div>
       <div>
@@ -508,7 +508,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber21">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber21">source</a></span></span>
     </span>
   </h3>
 
@@ -517,7 +517,7 @@ fetcher.get()
   
   
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-constructor-constructor">PathRestFetcher#constructor</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-constructor-constructor">PathFetcher#constructor</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -588,7 +588,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber64">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber64">source</a></span></span>
     </span>
   </h3>
 
@@ -598,7 +598,7 @@ fetcher.get()
   <div data-ice="description"><p>Performs DELETE request.</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-del">PathRestFetcher#del</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-del">PathFetcher#del</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -668,7 +668,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber31">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber31">source</a></span></span>
     </span>
   </h3>
 
@@ -678,7 +678,7 @@ fetcher.get()
   <div data-ice="description"><p>Performs GET request.</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-get">PathRestFetcher#get</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-get">PathFetcher#get</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -741,7 +741,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber75">source</a></span></span>
     </span>
   </h3>
 
@@ -751,7 +751,7 @@ fetcher.get()
   <div data-ice="description"><p>Performs HEAD request.</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-head">PathRestFetcher#head</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-head">PathFetcher#head</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -821,7 +821,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber86">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber86">source</a></span></span>
     </span>
   </h3>
 
@@ -831,7 +831,7 @@ fetcher.get()
   <div data-ice="description"><p>Performs PATCH request.</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-patch">PathRestFetcher#patch</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-patch">PathFetcher#patch</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -901,7 +901,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
@@ -911,7 +911,7 @@ fetcher.get()
   <div data-ice="description"><p>Performs POST request.</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-post">PathRestFetcher#post</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-post">PathFetcher#post</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>
@@ -981,7 +981,7 @@ fetcher.get()
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/rest-fetcher.js.html#lineNumber53">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/fetcher.js.html#lineNumber53">source</a></span></span>
     </span>
   </h3>
 
@@ -991,7 +991,7 @@ fetcher.get()
   <div data-ice="description"><p>Performs PUT request.</p>
 </div>
 
-  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-put">PathRestFetcher#put</a></span></div>
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/path-fetcher.js~PathFetcher.html#instance-method-put">PathFetcher#put</a></span></div>
 
   <div data-ice="properties"><div data-ice="properties">
   <h4 data-ice="title">Params:</h4>

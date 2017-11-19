@@ -1,14 +1,14 @@
 window.esdocSearchIndex = [
   [
-    "fetchers/src/path-rest-fetcher.js~pathrestfetcher",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html",
-    "<span>PathRestFetcher</span> <span class=\"search-result-import-path\">fetchers/src/path-rest-fetcher.js</span>",
+    "fetchers/src/fetcher.js~fetcher",
+    "class/src/fetcher.js~Fetcher.html",
+    "<span>Fetcher</span> <span class=\"search-result-import-path\">fetchers/src/fetcher.js</span>",
     "class"
   ],
   [
-    "fetchers/src/rest-fetcher.js~restfetcher",
-    "class/src/rest-fetcher.js~RestFetcher.html",
-    "<span>RestFetcher</span> <span class=\"search-result-import-path\">fetchers/src/rest-fetcher.js</span>",
+    "fetchers/src/path-fetcher.js~pathfetcher",
+    "class/src/path-fetcher.js~PathFetcher.html",
+    "<span>PathFetcher</span> <span class=\"search-result-import-path\">fetchers/src/path-fetcher.js</span>",
     "class"
   ],
   [
@@ -294,6 +294,54 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/fetcher.js",
+    "file/src/fetcher.js.html",
+    "src/fetcher.js",
+    "file"
+  ],
+  [
+    "src/fetcher.js~fetcher#constructor",
+    "class/src/fetcher.js~Fetcher.html#instance-constructor-constructor",
+    "src/fetcher.js~Fetcher#constructor",
+    "method"
+  ],
+  [
+    "src/fetcher.js~fetcher#del",
+    "class/src/fetcher.js~Fetcher.html#instance-method-del",
+    "src/fetcher.js~Fetcher#del",
+    "method"
+  ],
+  [
+    "src/fetcher.js~fetcher#get",
+    "class/src/fetcher.js~Fetcher.html#instance-method-get",
+    "src/fetcher.js~Fetcher#get",
+    "method"
+  ],
+  [
+    "src/fetcher.js~fetcher#head",
+    "class/src/fetcher.js~Fetcher.html#instance-method-head",
+    "src/fetcher.js~Fetcher#head",
+    "method"
+  ],
+  [
+    "src/fetcher.js~fetcher#patch",
+    "class/src/fetcher.js~Fetcher.html#instance-method-patch",
+    "src/fetcher.js~Fetcher#patch",
+    "method"
+  ],
+  [
+    "src/fetcher.js~fetcher#post",
+    "class/src/fetcher.js~Fetcher.html#instance-method-post",
+    "src/fetcher.js~Fetcher#post",
+    "method"
+  ],
+  [
+    "src/fetcher.js~fetcher#put",
+    "class/src/fetcher.js~Fetcher.html#instance-method-put",
+    "src/fetcher.js~Fetcher#put",
+    "method"
+  ],
+  [
     "src/index.js",
     "file/src/index.js.html",
     "src/index.js",
@@ -312,99 +360,51 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/path-rest-fetcher.js",
-    "file/src/path-rest-fetcher.js.html",
-    "src/path-rest-fetcher.js",
+    "src/path-fetcher.js",
+    "file/src/path-fetcher.js.html",
+    "src/path-fetcher.js",
     "file"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#constructor",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-constructor-constructor",
-    "src/path-rest-fetcher.js~PathRestFetcher#constructor",
+    "src/path-fetcher.js~pathfetcher#constructor",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-constructor-constructor",
+    "src/path-fetcher.js~PathFetcher#constructor",
     "method"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#del",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-del",
-    "src/path-rest-fetcher.js~PathRestFetcher#del",
+    "src/path-fetcher.js~pathfetcher#del",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-del",
+    "src/path-fetcher.js~PathFetcher#del",
     "method"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#get",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-get",
-    "src/path-rest-fetcher.js~PathRestFetcher#get",
+    "src/path-fetcher.js~pathfetcher#get",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-get",
+    "src/path-fetcher.js~PathFetcher#get",
     "method"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#head",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-head",
-    "src/path-rest-fetcher.js~PathRestFetcher#head",
+    "src/path-fetcher.js~pathfetcher#head",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-head",
+    "src/path-fetcher.js~PathFetcher#head",
     "method"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#patch",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-patch",
-    "src/path-rest-fetcher.js~PathRestFetcher#patch",
+    "src/path-fetcher.js~pathfetcher#patch",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-patch",
+    "src/path-fetcher.js~PathFetcher#patch",
     "method"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#post",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-post",
-    "src/path-rest-fetcher.js~PathRestFetcher#post",
+    "src/path-fetcher.js~pathfetcher#post",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-post",
+    "src/path-fetcher.js~PathFetcher#post",
     "method"
   ],
   [
-    "src/path-rest-fetcher.js~pathrestfetcher#put",
-    "class/src/path-rest-fetcher.js~PathRestFetcher.html#instance-method-put",
-    "src/path-rest-fetcher.js~PathRestFetcher#put",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js",
-    "file/src/rest-fetcher.js.html",
-    "src/rest-fetcher.js",
-    "file"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#constructor",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-constructor-constructor",
-    "src/rest-fetcher.js~RestFetcher#constructor",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#del",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-method-del",
-    "src/rest-fetcher.js~RestFetcher#del",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#get",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-method-get",
-    "src/rest-fetcher.js~RestFetcher#get",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#head",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-method-head",
-    "src/rest-fetcher.js~RestFetcher#head",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#patch",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-method-patch",
-    "src/rest-fetcher.js~RestFetcher#patch",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#post",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-method-post",
-    "src/rest-fetcher.js~RestFetcher#post",
-    "method"
-  ],
-  [
-    "src/rest-fetcher.js~restfetcher#put",
-    "class/src/rest-fetcher.js~RestFetcher.html#instance-method-put",
-    "src/rest-fetcher.js~RestFetcher#put",
+    "src/path-fetcher.js~pathfetcher#put",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-put",
+    "src/path-fetcher.js~PathFetcher#put",
     "method"
   ]
 ]

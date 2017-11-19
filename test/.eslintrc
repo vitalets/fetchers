@@ -10,8 +10,8 @@
   "globals": {
     "assert": false,
     "fetchMock": false,
-    "RestFetcher": false,
-    "PathRestFetcher": false
+    "Fetcher": false,
+    "PathFetcher": false
   },
 
   "rules": {

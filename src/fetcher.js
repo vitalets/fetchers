@@ -1,18 +1,18 @@
-import PathRestFetcher from './path-rest-fetcher';
+import PathFetcher from './path-fetcher';
 
 /**
  * Performs REST requests to persistent url.
  *
  * @example
- * import {RestFetcher} from 'fetchers';
+ * import {Fetcher} from 'fetchers';
  *
- * const fetcher = new RestFetcher('http://example.com', {credentials: 'include'});
+ * const fetcher = new Fetcher('http://example.com', {credentials: 'include'});
  *
  * fetcher.get()
  *    .then(response => response.ok ? response.json() : response.statusText)
  *    .then(data => console.log(data));
  */
-export default class RestFetcher extends PathRestFetcher {
+export default class Fetcher extends PathFetcher {
   /**
    * @param {String} url url used for every request
    * @param {RequestOptions} [defaultOptions={}] default options used for every request

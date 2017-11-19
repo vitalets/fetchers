@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 593,
+  "end": 559,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 593,
+    "end": 559,
     "loc": {
       "start": {
         "line": 1,
@@ -31,7 +31,7 @@
       {
         "type": "ImportDeclaration",
         "start": 413,
-        "end": 463,
+        "end": 445,
         "loc": {
           "start": {
             "line": 17,
@@ -39,14 +39,14 @@
           },
           "end": {
             "line": 17,
-            "column": 50
+            "column": 32
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
             "start": 420,
-            "end": 435,
+            "end": 427,
             "loc": {
               "start": {
                 "line": 17,
@@ -54,13 +54,13 @@
               },
               "end": {
                 "line": 17,
-                "column": 22
+                "column": 14
               }
             },
             "local": {
               "type": "Identifier",
               "start": 420,
-              "end": 435,
+              "end": 427,
               "loc": {
                 "start": {
                   "line": 17,
@@ -68,11 +68,11 @@
                 },
                 "end": {
                   "line": 17,
-                  "column": 22
+                  "column": 14
                 },
-                "identifierName": "PathRestFetcher"
+                "identifierName": "Fetcher"
               },
-              "name": "PathRestFetcher",
+              "name": "Fetcher",
               "leadingComments": null
             },
             "leadingComments": null
@@ -80,23 +80,23 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 441,
-          "end": 462,
+          "start": 433,
+          "end": 444,
           "loc": {
             "start": {
               "line": 17,
-              "column": 28
+              "column": 20
             },
             "end": {
               "line": 17,
-              "column": 49
+              "column": 31
             }
           },
           "extra": {
-            "rawValue": "./path-rest-fetcher",
-            "raw": "'./path-rest-fetcher'"
+            "rawValue": "./fetcher",
+            "raw": "'./fetcher'"
           },
-          "value": "./path-rest-fetcher"
+          "value": "./fetcher"
         },
         "leadingComments": [
           {
@@ -151,8 +151,8 @@
       },
       {
         "type": "ImportDeclaration",
-        "start": 464,
-        "end": 505,
+        "start": 446,
+        "end": 487,
         "loc": {
           "start": {
             "line": 18,
@@ -166,8 +166,8 @@
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 471,
-            "end": 482,
+            "start": 453,
+            "end": 464,
             "loc": {
               "start": {
                 "line": 18,
@@ -180,8 +180,8 @@
             },
             "local": {
               "type": "Identifier",
-              "start": 471,
-              "end": 482,
+              "start": 453,
+              "end": 464,
               "loc": {
                 "start": {
                   "line": 18,
@@ -191,16 +191,16 @@
                   "line": 18,
                   "column": 18
                 },
-                "identifierName": "RestFetcher"
+                "identifierName": "PathFetcher"
               },
-              "name": "RestFetcher"
+              "name": "PathFetcher"
             }
           }
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 488,
-          "end": 504,
+          "start": 470,
+          "end": 486,
           "loc": {
             "start": {
               "line": 18,
@@ -212,16 +212,16 @@
             }
           },
           "extra": {
-            "rawValue": "./rest-fetcher",
-            "raw": "'./rest-fetcher'"
+            "rawValue": "./path-fetcher",
+            "raw": "'./path-fetcher'"
           },
-          "value": "./rest-fetcher"
+          "value": "./path-fetcher"
         }
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 507,
-        "end": 545,
+        "start": 489,
+        "end": 519,
         "loc": {
           "start": {
             "line": 20,
@@ -229,15 +229,15 @@
           },
           "end": {
             "line": 20,
-            "column": 38
+            "column": 30
           }
         },
         "declaration": null,
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 515,
-            "end": 526,
+            "start": 497,
+            "end": 504,
             "loc": {
               "start": {
                 "line": 20,
@@ -245,13 +245,13 @@
               },
               "end": {
                 "line": 20,
-                "column": 19
+                "column": 15
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 515,
-              "end": 526,
+              "start": 497,
+              "end": 504,
               "loc": {
                 "start": {
                   "line": 20,
@@ -259,16 +259,16 @@
                 },
                 "end": {
                   "line": 20,
-                  "column": 19
+                  "column": 15
                 },
-                "identifierName": "RestFetcher"
+                "identifierName": "Fetcher"
               },
-              "name": "RestFetcher"
+              "name": "Fetcher"
             },
             "exported": {
               "type": "Identifier",
-              "start": 515,
-              "end": 526,
+              "start": 497,
+              "end": 504,
               "loc": {
                 "start": {
                   "line": 20,
@@ -276,60 +276,60 @@
                 },
                 "end": {
                   "line": 20,
-                  "column": 19
+                  "column": 15
                 },
-                "identifierName": "RestFetcher"
+                "identifierName": "Fetcher"
               },
-              "name": "RestFetcher"
+              "name": "Fetcher"
             }
           },
           {
             "type": "ExportSpecifier",
-            "start": 528,
-            "end": 543,
+            "start": 506,
+            "end": 517,
             "loc": {
               "start": {
                 "line": 20,
-                "column": 21
+                "column": 17
               },
               "end": {
                 "line": 20,
-                "column": 36
+                "column": 28
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 528,
-              "end": 543,
+              "start": 506,
+              "end": 517,
               "loc": {
                 "start": {
                   "line": 20,
-                  "column": 21
+                  "column": 17
                 },
                 "end": {
                   "line": 20,
-                  "column": 36
+                  "column": 28
                 },
-                "identifierName": "PathRestFetcher"
+                "identifierName": "PathFetcher"
               },
-              "name": "PathRestFetcher"
+              "name": "PathFetcher"
             },
             "exported": {
               "type": "Identifier",
-              "start": 528,
-              "end": 543,
+              "start": 506,
+              "end": 517,
               "loc": {
                 "start": {
                   "line": 20,
-                  "column": 21
+                  "column": 17
                 },
                 "end": {
                   "line": 20,
-                  "column": 36
+                  "column": 28
                 },
-                "identifierName": "PathRestFetcher"
+                "identifierName": "PathFetcher"
               },
-              "name": "PathRestFetcher"
+              "name": "PathFetcher"
             }
           }
         ],
@@ -337,8 +337,8 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 546,
-        "end": 592,
+        "start": 520,
+        "end": 558,
         "loc": {
           "start": {
             "line": 21,
@@ -346,13 +346,13 @@
           },
           "end": {
             "line": 21,
-            "column": 46
+            "column": 38
           }
         },
         "declaration": {
           "type": "ObjectExpression",
-          "start": 561,
-          "end": 591,
+          "start": 535,
+          "end": 557,
           "loc": {
             "start": {
               "line": 21,
@@ -360,14 +360,14 @@
             },
             "end": {
               "line": 21,
-              "column": 45
+              "column": 37
             }
           },
           "properties": [
             {
               "type": "ObjectProperty",
-              "start": 562,
-              "end": 573,
+              "start": 536,
+              "end": 543,
               "loc": {
                 "start": {
                   "line": 21,
@@ -375,7 +375,7 @@
                 },
                 "end": {
                   "line": 21,
-                  "column": 27
+                  "column": 23
                 }
               },
               "method": false,
@@ -383,8 +383,8 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 562,
-                "end": 573,
+                "start": 536,
+                "end": 543,
                 "loc": {
                   "start": {
                     "line": 21,
@@ -392,16 +392,16 @@
                   },
                   "end": {
                     "line": 21,
-                    "column": 27
+                    "column": 23
                   },
-                  "identifierName": "RestFetcher"
+                  "identifierName": "Fetcher"
                 },
-                "name": "RestFetcher"
+                "name": "Fetcher"
               },
               "value": {
                 "type": "Identifier",
-                "start": 562,
-                "end": 573,
+                "start": 536,
+                "end": 543,
                 "loc": {
                   "start": {
                     "line": 21,
@@ -409,11 +409,11 @@
                   },
                   "end": {
                     "line": 21,
-                    "column": 27
+                    "column": 23
                   },
-                  "identifierName": "RestFetcher"
+                  "identifierName": "Fetcher"
                 },
-                "name": "RestFetcher"
+                "name": "Fetcher"
               },
               "extra": {
                 "shorthand": true
@@ -421,16 +421,16 @@
             },
             {
               "type": "ObjectProperty",
-              "start": 575,
-              "end": 590,
+              "start": 545,
+              "end": 556,
               "loc": {
                 "start": {
                   "line": 21,
-                  "column": 29
+                  "column": 25
                 },
                 "end": {
                   "line": 21,
-                  "column": 44
+                  "column": 36
                 }
               },
               "method": false,
@@ -438,37 +438,37 @@
               "computed": false,
               "key": {
                 "type": "Identifier",
-                "start": 575,
-                "end": 590,
+                "start": 545,
+                "end": 556,
                 "loc": {
                   "start": {
                     "line": 21,
-                    "column": 29
+                    "column": 25
                   },
                   "end": {
                     "line": 21,
-                    "column": 44
+                    "column": 36
                   },
-                  "identifierName": "PathRestFetcher"
+                  "identifierName": "PathFetcher"
                 },
-                "name": "PathRestFetcher"
+                "name": "PathFetcher"
               },
               "value": {
                 "type": "Identifier",
-                "start": 575,
-                "end": 590,
+                "start": 545,
+                "end": 556,
                 "loc": {
                   "start": {
                     "line": 21,
-                    "column": 29
+                    "column": 25
                   },
                   "end": {
                     "line": 21,
-                    "column": 44
+                    "column": 36
                   },
-                  "identifierName": "PathRestFetcher"
+                  "identifierName": "PathFetcher"
                 },
-                "name": "PathRestFetcher"
+                "name": "PathFetcher"
               },
               "extra": {
                 "shorthand": true
@@ -621,9 +621,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "PathRestFetcher",
+      "value": "Fetcher",
       "start": 420,
-      "end": 435,
+      "end": 427,
       "loc": {
         "start": {
           "line": 17,
@@ -631,7 +631,7 @@
         },
         "end": {
           "line": 17,
-          "column": 22
+          "column": 14
         }
       }
     },
@@ -648,16 +648,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 436,
-      "end": 440,
+      "start": 428,
+      "end": 432,
       "loc": {
         "start": {
           "line": 17,
-          "column": 23
+          "column": 15
         },
         "end": {
           "line": 17,
-          "column": 27
+          "column": 19
         }
       }
     },
@@ -674,17 +674,17 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./path-rest-fetcher",
-      "start": 441,
-      "end": 462,
+      "value": "./fetcher",
+      "start": 433,
+      "end": 444,
       "loc": {
         "start": {
           "line": 17,
-          "column": 28
+          "column": 20
         },
         "end": {
           "line": 17,
-          "column": 49
+          "column": 31
         }
       }
     },
@@ -701,16 +701,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 462,
-      "end": 463,
+      "start": 444,
+      "end": 445,
       "loc": {
         "start": {
           "line": 17,
-          "column": 49
+          "column": 31
         },
         "end": {
           "line": 17,
-          "column": 50
+          "column": 32
         }
       }
     },
@@ -729,8 +729,8 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 464,
-      "end": 470,
+      "start": 446,
+      "end": 452,
       "loc": {
         "start": {
           "line": 18,
@@ -754,9 +754,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "RestFetcher",
-      "start": 471,
-      "end": 482,
+      "value": "PathFetcher",
+      "start": 453,
+      "end": 464,
       "loc": {
         "start": {
           "line": 18,
@@ -781,8 +781,8 @@
         "binop": null
       },
       "value": "from",
-      "start": 483,
-      "end": 487,
+      "start": 465,
+      "end": 469,
       "loc": {
         "start": {
           "line": 18,
@@ -807,9 +807,9 @@
         "binop": null,
         "updateContext": null
       },
-      "value": "./rest-fetcher",
-      "start": 488,
-      "end": 504,
+      "value": "./path-fetcher",
+      "start": 470,
+      "end": 486,
       "loc": {
         "start": {
           "line": 18,
@@ -834,8 +834,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 504,
-      "end": 505,
+      "start": 486,
+      "end": 487,
       "loc": {
         "start": {
           "line": 18,
@@ -862,8 +862,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 507,
-      "end": 513,
+      "start": 489,
+      "end": 495,
       "loc": {
         "start": {
           "line": 20,
@@ -887,8 +887,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 514,
-      "end": 515,
+      "start": 496,
+      "end": 497,
       "loc": {
         "start": {
           "line": 20,
@@ -912,9 +912,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "RestFetcher",
-      "start": 515,
-      "end": 526,
+      "value": "Fetcher",
+      "start": 497,
+      "end": 504,
       "loc": {
         "start": {
           "line": 20,
@@ -922,7 +922,7 @@
         },
         "end": {
           "line": 20,
-          "column": 19
+          "column": 15
         }
       }
     },
@@ -939,16 +939,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 526,
-      "end": 527,
+      "start": 504,
+      "end": 505,
       "loc": {
         "start": {
           "line": 20,
-          "column": 19
+          "column": 15
         },
         "end": {
           "line": 20,
-          "column": 20
+          "column": 16
         }
       }
     },
@@ -964,17 +964,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "PathRestFetcher",
-      "start": 528,
-      "end": 543,
+      "value": "PathFetcher",
+      "start": 506,
+      "end": 517,
       "loc": {
         "start": {
           "line": 20,
-          "column": 21
+          "column": 17
         },
         "end": {
           "line": 20,
-          "column": 36
+          "column": 28
         }
       }
     },
@@ -990,16 +990,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 543,
-      "end": 544,
+      "start": 517,
+      "end": 518,
       "loc": {
         "start": {
           "line": 20,
-          "column": 36
+          "column": 28
         },
         "end": {
           "line": 20,
-          "column": 37
+          "column": 29
         }
       }
     },
@@ -1016,16 +1016,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 544,
-      "end": 545,
+      "start": 518,
+      "end": 519,
       "loc": {
         "start": {
           "line": 20,
-          "column": 37
+          "column": 29
         },
         "end": {
           "line": 20,
-          "column": 38
+          "column": 30
         }
       }
     },
@@ -1044,8 +1044,8 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 546,
-      "end": 552,
+      "start": 520,
+      "end": 526,
       "loc": {
         "start": {
           "line": 21,
@@ -1072,8 +1072,8 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 553,
-      "end": 560,
+      "start": 527,
+      "end": 534,
       "loc": {
         "start": {
           "line": 21,
@@ -1097,8 +1097,8 @@
         "postfix": false,
         "binop": null
       },
-      "start": 561,
-      "end": 562,
+      "start": 535,
+      "end": 536,
       "loc": {
         "start": {
           "line": 21,
@@ -1122,9 +1122,9 @@
         "postfix": false,
         "binop": null
       },
-      "value": "RestFetcher",
-      "start": 562,
-      "end": 573,
+      "value": "Fetcher",
+      "start": 536,
+      "end": 543,
       "loc": {
         "start": {
           "line": 21,
@@ -1132,7 +1132,7 @@
         },
         "end": {
           "line": 21,
-          "column": 27
+          "column": 23
         }
       }
     },
@@ -1149,16 +1149,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 573,
-      "end": 574,
+      "start": 543,
+      "end": 544,
       "loc": {
         "start": {
           "line": 21,
-          "column": 27
+          "column": 23
         },
         "end": {
           "line": 21,
-          "column": 28
+          "column": 24
         }
       }
     },
@@ -1174,17 +1174,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "PathRestFetcher",
-      "start": 575,
-      "end": 590,
+      "value": "PathFetcher",
+      "start": 545,
+      "end": 556,
       "loc": {
         "start": {
           "line": 21,
-          "column": 29
+          "column": 25
         },
         "end": {
           "line": 21,
-          "column": 44
+          "column": 36
         }
       }
     },
@@ -1200,16 +1200,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 590,
-      "end": 591,
+      "start": 556,
+      "end": 557,
       "loc": {
         "start": {
           "line": 21,
-          "column": 44
+          "column": 36
         },
         "end": {
           "line": 21,
-          "column": 45
+          "column": 37
         }
       }
     },
@@ -1226,16 +1226,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 591,
-      "end": 592,
+      "start": 557,
+      "end": 558,
       "loc": {
         "start": {
           "line": 21,
-          "column": 45
+          "column": 37
         },
         "end": {
           "line": 21,
-          "column": 46
+          "column": 38
         }
       }
     },
@@ -1252,8 +1252,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 593,
-      "end": 593,
+      "start": 559,
+      "end": 559,
       "loc": {
         "start": {
           "line": 22,

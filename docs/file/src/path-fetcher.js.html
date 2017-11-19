@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/path-rest-fetcher.js | fetchers</title>
+  <title data-ice="title">src/path-fetcher.js | fetchers</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -29,22 +29,22 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html">RestFetcher</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html">Fetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html">PathFetcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span></span></li>
 </ul>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/path-rest-fetcher.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/path-fetcher.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
  * Performs REST requests to persistent base url with different paths.
  *
  * @example
- * import {PathRestFetcher} from &apos;fetchers&apos;;
+ * import {PathFetcher} from &apos;fetchers&apos;;
  *
- * const fetcher = new PathRestFetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;});
+ * const fetcher = new PathFetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;});
  *
  * fetcher.get(&apos;/get&apos;)
  *    .then(response =&gt; response.ok ? response.json() : response.statusText)
@@ -54,7 +54,7 @@
  *    .then(response =&gt; response.ok ? response.json() : response.statusText)
  *    .then(data =&gt; console.log(data));
  */
-export default class PathRestFetcher {
+export default class PathFetcher {
   /**
    * @param {String} [baseUrl=&apos;&apos;]
    * @param {RequestOptions} [defaultOptions={}] default options used for every request

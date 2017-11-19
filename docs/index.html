@@ -29,8 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-rest-fetcher.js~PathRestFetcher.html">PathRestFetcher</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/rest-fetcher.js~RestFetcher.html">RestFetcher</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/fetcher.js~Fetcher.html">Fetcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/path-fetcher.js~PathFetcher.html">PathFetcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Handlers">Handlers</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-external">E</span><span data-ice="name"><span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Request#Properties">RequestOptions</a></span></span></li>
 </ul>
@@ -43,21 +43,47 @@
 <blockquote>
 <p>Semantic RESTful Fetch API wrappers</p>
 </blockquote>
-<p>A wrappers over <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.</p>
+<p>A set of wrappers over <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.</p>
 <h2 id="contents">Contents</h2><ul>
+<li><a href="#quick-example">Quick example</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#requirements">Requirements</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#api">API</a></li>
 <li><a href="#license">License</a></li>
 </ul>
+<h2 id="quick-example">Quick example</h2><pre><code class="lang-js"><code class="source-code prettyprint">import {Fetcher} from &apos;fetchers&apos;;
+
+// Create fetcher with default url, default options and default response handler
+const fetcher = new Fetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;}, {
+  handleResponse: async response =&gt; await response.json()
+});
+
+// REST requests to http://example.com
+fetcher.get().then(json =&gt; console.log(json));
+fetcher.post(data).then(json =&gt; console.log(json));
+fetcher.put(data).then(json =&gt; console.log(json));
+fetcher.del().then(json =&gt; console.log(json));</code>
+</code></pre>
+<h2 id="features">Features</h2><p>The advantages over bare <code>.fetch()</code> are following:</p>
+<ul>
+<li>Default url used for every request with optional relative path</li>
+<li>Default options and headers applied to every request</li>
+<li>Default handlers for request and response</li>
+<li>Semantic REST methods: <code>get()</code>, <code>post()</code>, <code>put()</code>, <code>del()</code>, <code>head()</code> and <code>patch()</code></li>
+</ul>
+<h2 id="requirements">Requirements</h2><p>The only requirement is global <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch"><code>fetch()</code></a>.<br>All major browsers already <a href="https://caniuse.com/#feat=fetch">support it</a>,
+for others you can use <a href="https://github.com/github/fetch">fetch polyfill</a>.
+In Node.js consider <a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> package.</p>
 <h2 id="installation">Installation</h2><pre><code class="lang-bash"><code class="source-code prettyprint">npm install fetchers --save</code>
 </code></pre>
 <h2 id="usage">Usage</h2><ol>
 <li><p>Multiple REST requests to single url:</p>
-<pre><code class="lang-js"><code class="source-code prettyprint"> import {RestFetcher} from &apos;fetchers&apos;;
+<pre><code class="lang-js"><code class="source-code prettyprint"> import {Fetcher} from &apos;fetchers&apos;;
 
  // Create fetcher with default url and options
- const fetcher = new RestFetcher(&apos;http://example.com&apos;, {
+ const fetcher = new Fetcher(&apos;http://example.com&apos;, {
    credentials: &apos;include&apos;,
    headers: {
      Accept: &apos;application/json&apos;
@@ -82,10 +108,10 @@
 </code></pre>
 </li>
 <li><p>Multiple REST requests to base url with different paths:</p>
-<pre><code class="lang-js"><code class="source-code prettyprint"> import {PathRestFetcher} from &apos;fetchers&apos;;
+<pre><code class="lang-js"><code class="source-code prettyprint"> import {PathFetcher} from &apos;fetchers&apos;;
 
  // Create fetcher with base url
- const fetcher = new PathRestFetcher(&apos;http://example.com&apos;);
+ const fetcher = new PathFetcher(&apos;http://example.com&apos;);
 
  // GET http://example.com/get
  fetcher.get(&apos;/get&apos;)
@@ -99,9 +125,6 @@
 </code></pre>
 </li>
 </ol>
-<blockquote>
-<p>In Node.js you should provide <code>global.fetch()</code>. For example from <a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> package.</p>
-</blockquote>
 <h2 id="api">API</h2><p>Please see <a href="https://vitalets.github.io/fetchers/identifiers.html">online API Reference</a>.</p>
 <h2 id="license">License</h2><p>MIT @ <a href="https://github.com/vitalets">Vitaliy Potapov</a></p>
 </div>

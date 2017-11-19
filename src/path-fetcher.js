@@ -2,9 +2,9 @@
  * Performs REST requests to persistent base url with different paths.
  *
  * @example
- * import {PathRestFetcher} from 'fetchers';
+ * import {PathFetcher} from 'fetchers';
  *
- * const fetcher = new PathRestFetcher('http://example.com', {credentials: 'include'});
+ * const fetcher = new PathFetcher('http://example.com', {credentials: 'include'});
  *
  * fetcher.get('/get')
  *    .then(response => response.ok ? response.json() : response.statusText)
@@ -14,7 +14,7 @@
  *    .then(response => response.ok ? response.json() : response.statusText)
  *    .then(data => console.log(data));
  */
-export default class PathRestFetcher {
+export default class PathFetcher {
   /**
    * @param {String} [baseUrl='']
    * @param {RequestOptions} [defaultOptions={}] default options used for every request

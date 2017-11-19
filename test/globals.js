@@ -1,5 +1,5 @@
 
-import {RestFetcher, PathRestFetcher} from '../src';
+import {Fetcher, PathFetcher} from '../src';
 import fetch from 'node-fetch';
 import fetchMock from 'fetch-mock';
 import assert from 'assert';
@@ -10,10 +10,10 @@ global.fetchMock = fetchMock;
 global.assert = assert;
 if (process.env.LIB_PATH) {
   const fetchers = require(path.resolve(process.env.LIB_PATH));
-  global.RestFetcher = fetchers.RestFetcher;
-  global.PathRestFetcher = fetchers.PathRestFetcher;
+  global.Fetcher = fetchers.Fetcher;
+  global.PathFetcher = fetchers.PathFetcher;
 } else {
-  global.RestFetcher = RestFetcher;
-  global.PathRestFetcher = PathRestFetcher;
+  global.Fetcher = Fetcher;
+  global.PathFetcher = PathFetcher;
 }
 

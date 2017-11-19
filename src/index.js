@@ -14,8 +14,8 @@
  * e.g. `async response => await response.json()`
  */
 
-import PathRestFetcher from './path-rest-fetcher';
-import RestFetcher from './rest-fetcher';
+import Fetcher from './fetcher';
+import PathFetcher from './path-fetcher';
 
-export {RestFetcher, PathRestFetcher};
-export default {RestFetcher, PathRestFetcher};
+export {Fetcher, PathFetcher};
+export default {Fetcher, PathFetcher};

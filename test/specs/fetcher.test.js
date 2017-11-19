@@ -4,9 +4,9 @@ const headers = {
   Accept: 'application/json'
 };
 
-describe('RestFetcher', function () {
+describe('Fetcher', function () {
   before(function () {
-    this.fetcher = new RestFetcher(url, {headers});
+    this.fetcher = new Fetcher(url, {headers});
   });
   describe('REST methods', function () {
     it('GET', async function () {
@@ -79,7 +79,7 @@ describe('RestFetcher', function () {
   });
   describe('Handlers', function () {
     it('handleRequestBody', async function () {
-      const fetcher = new RestFetcher(url, {}, {
+      const fetcher = new Fetcher(url, {}, {
         handleRequestBody: body => JSON.stringify(body)
       });
       fetchMock.postOnce(url, {});
@@ -89,7 +89,7 @@ describe('RestFetcher', function () {
       assert.ok(response.ok);
     });
     it('handleResponse', async function () {
-      const fetcher = new RestFetcher(url, {}, {
+      const fetcher = new Fetcher(url, {}, {
         handleResponse: async response => await response.json()
       });
       fetchMock.getOnce(url, {foo: 'bar'});

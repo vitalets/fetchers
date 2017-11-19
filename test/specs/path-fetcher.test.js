@@ -6,9 +6,9 @@ const headers = {
   Accept: 'application/json'
 };
 
-describe('PathRestFetcher', function () {
+describe('PathFetcher', function () {
   before(function () {
-    this.fetcher = new PathRestFetcher(baseUrl, {headers});
+    this.fetcher = new PathFetcher(baseUrl, {headers});
   });
   describe('REST methods to path', function () {
     it('GET', async function () {
@@ -124,7 +124,7 @@ describe('PathRestFetcher', function () {
   });
   describe('Join path with base url', function () {
     async function checkJoinUrl(baseUrl, path, finalUrl) {
-      const fetcher = new PathRestFetcher(baseUrl);
+      const fetcher = new PathFetcher(baseUrl);
       fetchMock.getOnce(finalUrl, {});
       await fetcher.get(path);
       assert.ok(fetchMock.called(finalUrl));
@@ -147,7 +147,7 @@ describe('PathRestFetcher', function () {
   });
   describe('Handlers', function () {
     it('handleRequestBody', async function () {
-      const fetcher = new PathRestFetcher(baseUrl, {}, {
+      const fetcher = new PathFetcher(baseUrl, {}, {
         handleRequestBody: body => JSON.stringify(body)
       });
       fetchMock.postOnce(url, {});
@@ -157,7 +157,7 @@ describe('PathRestFetcher', function () {
       assert.ok(response.ok);
     });
     it('handleResponse', async function () {
-      const fetcher = new PathRestFetcher(baseUrl, {}, {
+      const fetcher = new PathFetcher(baseUrl, {}, {
         handleResponse: async response => await response.json()
       });
       fetchMock.getOnce(url, {foo: 'bar'});
