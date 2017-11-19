@@ -43,7 +43,7 @@
 <blockquote>
 <p>Semantic RESTful Fetch API wrappers</p>
 </blockquote>
-<p>A set of wrappers over <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> providing semantic methods for GET, POST, PUT, DELETE and HEAD requests.</p>
+<p>A set of <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> wrappers providing default options and semantic methods for <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> requests.</p>
 <h2 id="contents">Contents</h2><ul>
 <li><a href="#quick-example">Quick example</a></li>
 <li><a href="#features">Features</a></li>
@@ -78,53 +78,79 @@ for others you can use <a href="https://github.com/github/fetch">fetch polyfill<
 In Node.js consider <a href="https://www.npmjs.com/package/node-fetch">node-fetch</a> package.</p>
 <h2 id="installation">Installation</h2><pre><code class="lang-bash"><code class="source-code prettyprint">npm install fetchers --save</code>
 </code></pre>
-<h2 id="usage">Usage</h2><ol>
-<li><p>Multiple REST requests to single url:</p>
-<pre><code class="lang-js"><code class="source-code prettyprint"> import {Fetcher} from &apos;fetchers&apos;;
+<h2 id="usage">Usage</h2><p>There are two classes:</p>
+<ul>
+<li><code>Fetcher</code> - used for requests to constant url</li>
+<li><code>PathFetcher</code> - used for requests to base url with different relative paths</li>
+</ul>
+<p>The examples below are for <code>Fetcher</code> but suitable for <code>PathFetcher</code> as well.</p>
+<h4 id="1--semantic-rest-requests">1. Semantic REST requests</h4><p>To perform GET, POST, PUT, DELETE, HEAD and PATCH there are corresponding methods:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import {Fetcher} from &apos;fetchers&apos;;
 
- // Create fetcher with default url and options
- const fetcher = new Fetcher(&apos;http://example.com&apos;, {
-   credentials: &apos;include&apos;,
-   headers: {
-     Accept: &apos;application/json&apos;
-   }
- });
+const fetcher = new Fetcher(&apos;http://example.com&apos;);
 
- // GET http://example.com
- fetcher.get()
-   .then(response =&gt; response.json());
-
- // POST to http://example.com
- fetcher.post(JSON.stringify(body))
-   .then(response =&gt; response.json());
-
- // POST to http://example.com with CORS mode
- fetcher.post(JSON.stringify(body), {mode: &apos;cors&apos;})
-   .then(response =&gt; response.json());
-
- // POST to http://example.com with additional header
- fetcher.post(JSON.stringify(body), {headers: {&apos;Content-Type&apos;: &apos;application/json&apos;}})
-   .then(response =&gt; response.json());</code>
+fetcher.get().then(...);
+fetcher.post(body).then(...);
+fetcher.put(body).then(...);
+fetcher.del().then(...);
+fetcher.head().then(...);
+fetcher.patch().then(...);</code>
 </code></pre>
-</li>
-<li><p>Multiple REST requests to base url with different paths:</p>
-<pre><code class="lang-js"><code class="source-code prettyprint"> import {PathFetcher} from &apos;fetchers&apos;;
+<h4 id="2--default-options-and-headers">2. Default options and headers</h4><p>You can set default options to be used for every request:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {
+  credentials: &apos;include&apos;,
+  headers: {
+    Accept: &apos;application/json&apos;
+  }
+});
 
- // Create fetcher with base url
- const fetcher = new PathFetcher(&apos;http://example.com&apos;);
-
- // GET http://example.com/get
- fetcher.get(&apos;/get&apos;)
-   .then(response =&gt; response.json());
-
- // POST to http://example.com/post
- fetcher.post(&apos;/post&apos;, JSON.stringify(body))
-   .then(response =&gt; response.json());
-
- ...</code>
+// POST with defaults
+fetcher.post(body);</code>
 </code></pre>
-</li>
-</ol>
+<p>But you can always add custom options:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">// POST with additional options
+fetcher.post(body, {mode: &apos;cors&apos;})</code>
+</code></pre>
+<h4 id="3--default-request-body-handler">3. Default request body handler</h4><p>To apply some transformation to every request body use <code>handlers.handleRequestBody</code>.
+For example convert every request body to JSON:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {}, {
+  handleRequestBody: body =&gt; JSON.stringify(body)
+});
+
+fetcher.post({foo: &apos;bar&apos;});</code>
+</code></pre>
+<h4 id="4--default-response-handler">4. Default response handler</h4><p>To apply some transformation to every response use <code>handlers.handleResponse</code>.
+For example convert every response to JSON:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {}, {
+  handleResponse: async response =&gt; await response.json()
+});
+
+fetcher.get().then(json =&gt; console.log(json));</code>
+</code></pre>
+<p>Reject in case of non <code>2xx</code> response:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {}, {
+  handleResponse: async response =&gt; {
+    if (!response.ok) {
+      throw new Error(`${response.status} ${response.statusText} ${await response.text()}`);
+    }
+    return response; 
+  }
+});</code>
+</code></pre>
+<h4 id="5--requests-to-base-url---relative-paths">5. Requests to base url + relative paths</h4><p>For <code>PathFetcher</code> the first parameter in all methods is always string path relative to base url:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">import {PathFetcher} from &apos;fetchers&apos;;
+
+// Set base url
+const fetcher = new PathFetcher(&apos;http://example.com&apos;);
+
+// GET http://example.com/get
+fetcher.get(&apos;/get&apos;)
+  .then(response =&gt; response.json());
+
+// POST to http://example.com/post
+fetcher.post(&apos;/post&apos;, JSON.stringify(body))
+  .then(response =&gt; response.json());</code>
+</code></pre>
 <h2 id="api">API</h2><p>Please see <a href="https://vitalets.github.io/fetchers/identifiers.html">online API Reference</a>.</p>
 <h2 id="license">License</h2><p>MIT @ <a href="https://github.com/vitalets">Vitaliy Potapov</a></p>
 </div>

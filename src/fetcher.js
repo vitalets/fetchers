@@ -1,7 +1,7 @@
 import PathFetcher from './path-fetcher';
 
 /**
- * Performs REST requests to persistent url.
+ * Performs REST requests to constant url.
  *
  * @example
  * import {Fetcher} from 'fetchers';

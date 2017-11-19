@@ -1,5 +1,5 @@
 /**
- * Performs REST requests to persistent base url with different paths.
+ * Performs REST requests to constant base url with different paths.
  *
  * @example
  * import {PathFetcher} from 'fetchers';
