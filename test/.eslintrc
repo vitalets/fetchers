@@ -16,6 +16,7 @@
 
   "rules": {
     "max-nested-callbacks": 0,
+    "max-lines": 0,
     "mocha/no-exclusive-tests": "error"
   }
 }

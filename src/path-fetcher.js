@@ -125,5 +125,5 @@ export default class PathFetcher {
 }
 
 function isAbsoluteUrl(str) {
-  return /^https?:\/\//i.test(str);
+  return /^(https?:)?\/\//i.test(str);
 }

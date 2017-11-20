@@ -141,8 +141,17 @@ describe('PathFetcher', function () {
     it('baseUrl with slash, path with slash', async function () {
       await checkJoinUrl('http://test.com/', '/foo', 'http://test.com/foo');
     });
-    it('many slashes', async function () {
-      await checkJoinUrl('http://test.com//', '///foo', 'http://test.com/foo');
+    it('baseUrl with many slashes', async function () {
+      await checkJoinUrl('http://test.com//', '/foo', 'http://test.com/foo');
+    });
+    it('path is absolute (http)', async function () {
+      await checkJoinUrl('http://test.com/', 'http://example.com', 'http://example.com');
+    });
+    it('path is absolute (https)', async function () {
+      await checkJoinUrl('http://test.com/', 'https://example.com', 'https://example.com');
+    });
+    it('path is absolute (no protocol)', async function () {
+      await checkJoinUrl('http://test.com/', '//example.com', '//example.com');
     });
   });
   describe('Handlers', function () {
