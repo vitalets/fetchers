@@ -13,6 +13,11 @@ A set of [Fetch API] wrappers providing default options and semantic methods for
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
+  * [Semantic REST requests](#1-semantic-rest-requests)
+  * [Default options and headers](#2-default-options-and-headers)
+  * [Handling request body](#3-handling-request-body)
+  * [Handling response](#4-handling-response)
+  * [Send requests to relative paths](#5-send-requests-to-relative-paths)
 * [API](#api)
 * [License](#license)
 
@@ -25,7 +30,7 @@ const fetcher = new Fetcher('http://example.com', {credentials: 'include'}, {
   handleResponse: async response => await response.json()
 });
 
-// REST requests to http://example.com
+// Perform different REST requests
 fetcher.get().then(json => console.log(json));
 fetcher.post(data).then(json => console.log(json));
 fetcher.put(data).then(json => console.log(json));
@@ -35,10 +40,12 @@ fetcher.del().then(json => console.log(json));
 ## Features
 The advantages over bare `.fetch()` are following:
 
-* Default url used for every request with optional relative path
-* Default options and headers applied to every request
-* Default handlers for request and response
 * Semantic REST methods: `get()`, `post()`, `put()`, `del()`, `head()` and `patch()`
+* Convenient defaults for all methods:
+  * Default url and options
+  * Default request body handler, e.g. `JSON.stringify` 
+  * Default response handler, e.g. `response.json()` 
+* Requests to base url with different paths, e.g. `http://example.com` + (`/get`, `/post`, ...)
 
 ## Requirements
 The only requirement is global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).  
@@ -93,7 +100,7 @@ But you can always add custom options:
 fetcher.post(body, {mode: 'cors'})
 ```
 
-#### 3. Default request body handler
+#### 3. Handle request body
 To apply some transformation to every request body use `handlers.handleRequestBody`.
 For example convert every request body to JSON:
 ```js
@@ -104,7 +111,7 @@ const fetcher = new Fetcher('http://example.com', {}, {
 fetcher.post({foo: 'bar'});
 ```
 
-#### 4. Default response handler
+#### 4. Handle response
 To apply some transformation to every response use `handlers.handleResponse`.
 For example convert every response to JSON:
 ```js
@@ -126,7 +133,7 @@ const fetcher = new Fetcher('http://example.com', {}, {
   }
 });
 ```
-#### 5. Requests to base url + relative paths
+#### 5. Send requests to relative paths
 For `PathFetcher` the first parameter in all methods is always string path relative to base url:
 ```js
 import {PathFetcher} from 'fetchers';
@@ -144,7 +151,7 @@ fetcher.post('/post', JSON.stringify(body))
 ```
 
 ## API
-Please see [online API Reference](https://vitalets.github.io/fetchers/identifiers.html).
+Full class and method descriptions are available in [API Reference](https://vitalets.github.io/fetchers/identifiers.html).
 
 ## License
 MIT @ [Vitaliy Potapov](https://github.com/vitalets)
