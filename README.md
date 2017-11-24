@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/fetchers.svg)](https://www.npmjs.com/package/fetchers)
 [![license](https://img.shields.io/npm/l/fetchers.svg)](https://www.npmjs.com/package/fetchers)
 
-A wrapper over [Fetch API] with semantic REST methods.
+A wrappers over [Fetch API] with semantic REST methods.
 
 ## Contents
 * [Quick example](#quick-example)
