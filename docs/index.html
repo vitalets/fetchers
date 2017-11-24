@@ -40,10 +40,7 @@
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="fetchers">fetchers</h1><p><a href="https://travis-ci.org/vitalets/fetchers"><img src="https://travis-ci.org/vitalets/fetchers.svg?branch=master" alt="Build Status"></a>
 <a href="https://www.npmjs.com/package/fetchers"><img src="https://img.shields.io/npm/v/fetchers.svg" alt="npm"></a>
 <a href="https://www.npmjs.com/package/fetchers"><img src="https://img.shields.io/npm/l/fetchers.svg" alt="license"></a></p>
-<blockquote>
-<p>Semantic RESTful Fetch API wrappers</p>
-</blockquote>
-<p>A set of <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> wrappers providing default options and semantic methods for <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> requests.</p>
+<p>A wrapper over <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a> with semantic REST methods.</p>
 <h2 id="contents">Contents</h2><ul>
 <li><a href="#quick-example">Quick example</a></li>
 <li><a href="#features">Features</a></li>
@@ -62,16 +59,16 @@
 </ul>
 <h2 id="quick-example">Quick example</h2><pre><code class="lang-js"><code class="source-code prettyprint">import {Fetcher} from &apos;fetchers&apos;;
 
-// Create fetcher with default url, default options and default response handler
-const fetcher = new Fetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;}, {
-  handleResponse: async response =&gt; await response.json()
-});
+const fetcher = new Fetcher(&apos;http://example.com&apos;, {credentials: &apos;include&apos;});
 
-// Perform different REST requests
-fetcher.get().then(json =&gt; console.log(json));
-fetcher.post(data).then(json =&gt; console.log(json));
-fetcher.put(data).then(json =&gt; console.log(json));
-fetcher.delete().then(json =&gt; console.log(json));</code>
+// GET
+fetcher.get().then(response =&gt; ...);
+// POST
+fetcher.post(data).then(response =&gt; ...);
+// PUT
+fetcher.put(data).then(response =&gt; ...);
+// DELETE
+fetcher.delete().then(response =&gt; ...);</code>
 </code></pre>
 <h2 id="features">Features</h2><p>The advantages over bare <code>.fetch()</code> are following:</p>
 <ul>
@@ -82,7 +79,7 @@ fetcher.delete().then(json =&gt; console.log(json));</code>
 <li>Default response handler, e.g. <code>response.json()</code> </li>
 </ul>
 </li>
-<li>Requests to base url with different paths, e.g. <code>http://example.com</code> + (<code>/get</code>, <code>/post</code>, ...)</li>
+<li>Attaching different paths to base url, e.g. <code>http://example.com</code> + (<code>/get</code>, <code>/post</code>, ...)</li>
 </ul>
 <h2 id="requirements">Requirements</h2><p>The only requirement is global <a href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch"><code>fetch()</code></a>.<br>All major browsers already <a href="https://caniuse.com/#feat=fetch">support it</a>,
 for others you can use <a href="https://github.com/github/fetch">fetch polyfill</a>.
@@ -92,7 +89,7 @@ In Node.js consider <a href="https://www.npmjs.com/package/node-fetch">node-fetc
 <h2 id="usage">Usage</h2><p>There are two classes:</p>
 <ul>
 <li><code>Fetcher</code> - used for requests to constant url</li>
-<li><code>PathFetcher</code> - used for requests to base url with different relative paths</li>
+<li><code>PathFetcher</code> - used for requests to constant base url with different relative paths</li>
 </ul>
 <p>The examples below are for <code>Fetcher</code> but suitable for <code>PathFetcher</code> as well.</p>
 <h4 id="1--semantic-rest-requests">1. Semantic REST requests</h4><p>To perform GET, POST, PUT, DELETE, HEAD and PATCH there are corresponding methods:</p>
@@ -107,7 +104,7 @@ fetcher.delete().then(...);
 fetcher.head().then(...);
 fetcher.patch().then(...);</code>
 </code></pre>
-<h4 id="2--default-options-and-headers">2. Default options and headers</h4><p>You can set default options to be used for every request:</p>
+<h4 id="2--default-options-and-headers">2. Default options and headers</h4><p>You can set default options for every request from <code>Fetcher</code> instance.<br>Example - include cookies in all requests and accept JSON:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {
   credentials: &apos;include&apos;,
   headers: {
@@ -115,30 +112,27 @@ fetcher.patch().then(...);</code>
   }
 });
 
-// POST with defaults
+fetcher.get();
 fetcher.post(body);</code>
 </code></pre>
-<p>But you can always add custom options:</p>
-<pre><code class="lang-js"><code class="source-code prettyprint">// POST with additional options
-fetcher.post(body, {mode: &apos;cors&apos;})</code>
+<p>Add custom options to particular request:</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">fetcher.post(body, {mode: &apos;cors&apos;})</code>
 </code></pre>
-<h4 id="3--handle-request-body">3. Handle request body</h4><p>To apply some transformation to every request body use <code>handlers.handleRequestBody</code>.
-For example convert every request body to JSON:</p>
+<h4 id="3--handle-request-body">3. Handle request body</h4><p>To apply some transformation to body of every request use <code>handlers.handleRequestBody</code>.<br>Example - convert every request body to JSON:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {}, {
   handleRequestBody: body =&gt; JSON.stringify(body)
 });
 
 fetcher.post({foo: &apos;bar&apos;});</code>
 </code></pre>
-<h4 id="4--handle-response">4. Handle response</h4><p>To apply some transformation to every response use <code>handlers.handleResponse</code>.
-For example convert every response to JSON:</p>
+<h4 id="4--handle-response">4. Handle response</h4><p>To apply some transformation to every response use <code>handlers.handleResponse</code>.<br>Example - convert every response to JSON:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {}, {
   handleResponse: async response =&gt; await response.json()
 });
 
 fetcher.get().then(json =&gt; console.log(json));</code>
 </code></pre>
-<p>Reject in case of non <code>2xx</code> response:</p>
+<p>Example - throw error in case of non <code>2xx</code> response:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">const fetcher = new Fetcher(&apos;http://example.com&apos;, {}, {
   handleResponse: async response =&gt; {
     if (!response.ok) {
@@ -148,21 +142,19 @@ fetcher.get().then(json =&gt; console.log(json));</code>
   }
 });</code>
 </code></pre>
-<h4 id="5--send-requests-to-relative-paths">5. Send requests to relative paths</h4><p>For <code>PathFetcher</code> the first parameter in all methods is always string path relative to base url:</p>
+<h4 id="5--send-requests-to-relative-paths">5. Send requests to relative paths</h4><p><code>PathFetcher</code> can send requests to different urls. 
+The first parameter in all methods is string - relative path attached to base url:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">import {PathFetcher} from &apos;fetchers&apos;;
 
-// Set base url
 const fetcher = new PathFetcher(&apos;http://example.com&apos;);
 
 // GET http://example.com/get
-fetcher.get(&apos;/get&apos;)
-  .then(response =&gt; response.json());
+fetcher.get(&apos;/get&apos;).then(response =&gt; ...);
 
 // POST to http://example.com/post
-fetcher.post(&apos;/post&apos;, JSON.stringify(body))
-  .then(response =&gt; response.json());</code>
+fetcher.post(&apos;/post&apos;, body).then(response =&gt; ...);</code>
 </code></pre>
-<h2 id="api">API</h2><p>Full class and method descriptions are available in <a href="https://vitalets.github.io/fetchers/identifiers.html">API Reference</a>.</p>
+<h2 id="api">API</h2><p><a href="https://vitalets.github.io/fetchers/identifiers.html">Full API Reference</a>.</p>
 <h2 id="license">License</h2><p>MIT @ <a href="https://github.com/vitalets">Vitaliy Potapov</a></p>
 </div>
 </div>

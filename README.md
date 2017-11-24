@@ -3,9 +3,7 @@
 [![npm](https://img.shields.io/npm/v/fetchers.svg)](https://www.npmjs.com/package/fetchers)
 [![license](https://img.shields.io/npm/l/fetchers.svg)](https://www.npmjs.com/package/fetchers)
 
-> Semantic RESTful Fetch API wrappers
-
-A set of [Fetch API] wrappers providing default options and semantic methods for [REST] requests.
+A wrapper over [Fetch API] with semantic REST methods.
 
 ## Contents
 * [Quick example](#quick-example)
@@ -25,16 +23,16 @@ A set of [Fetch API] wrappers providing default options and semantic methods for
 ```js
 import {Fetcher} from 'fetchers';
 
-// Create fetcher with default url, default options and default response handler
-const fetcher = new Fetcher('http://example.com', {credentials: 'include'}, {
-  handleResponse: async response => await response.json()
-});
+const fetcher = new Fetcher('http://example.com', {credentials: 'include'});
 
-// Perform different REST requests
-fetcher.get().then(json => console.log(json));
-fetcher.post(data).then(json => console.log(json));
-fetcher.put(data).then(json => console.log(json));
-fetcher.delete().then(json => console.log(json));
+// GET
+fetcher.get().then(response => ...);
+// POST
+fetcher.post(data).then(response => ...);
+// PUT
+fetcher.put(data).then(response => ...);
+// DELETE
+fetcher.delete().then(response => ...);
 ```
 
 ## Features
@@ -45,7 +43,7 @@ The advantages over bare `.fetch()` are following:
   * Default url and options
   * Default request body handler, e.g. `JSON.stringify` 
   * Default response handler, e.g. `response.json()` 
-* Requests to base url with different paths, e.g. `http://example.com` + (`/get`, `/post`, ...)
+* Attaching different paths to base url, e.g. `http://example.com` + (`/get`, `/post`, ...)
 
 ## Requirements
 The only requirement is global [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch).  
@@ -62,7 +60,7 @@ npm install fetchers --save
 There are two classes:
 
 * `Fetcher` - used for requests to constant url
-* `PathFetcher` - used for requests to base url with different relative paths
+* `PathFetcher` - used for requests to constant base url with different relative paths
 
 The examples below are for `Fetcher` but suitable for `PathFetcher` as well.
 
@@ -82,7 +80,8 @@ fetcher.patch().then(...);
 ```
 
 #### 2. Default options and headers
-You can set default options to be used for every request:
+You can set default options for every request from `Fetcher` instance.  
+Example - include cookies in all requests and accept JSON:
 ```js
 const fetcher = new Fetcher('http://example.com', {
   credentials: 'include',
@@ -91,18 +90,17 @@ const fetcher = new Fetcher('http://example.com', {
   }
 });
 
-// POST with defaults
+fetcher.get();
 fetcher.post(body);
 ```
-But you can always add custom options:
+Add custom options to particular request:
 ```js
-// POST with additional options
 fetcher.post(body, {mode: 'cors'})
 ```
 
 #### 3. Handle request body
-To apply some transformation to every request body use `handlers.handleRequestBody`.
-For example convert every request body to JSON:
+To apply some transformation to body of every request use `handlers.handleRequestBody`.  
+Example - convert every request body to JSON:
 ```js
 const fetcher = new Fetcher('http://example.com', {}, {
   handleRequestBody: body => JSON.stringify(body)
@@ -112,8 +110,8 @@ fetcher.post({foo: 'bar'});
 ```
 
 #### 4. Handle response
-To apply some transformation to every response use `handlers.handleResponse`.
-For example convert every response to JSON:
+To apply some transformation to every response use `handlers.handleResponse`.  
+Example - convert every response to JSON:
 ```js
 const fetcher = new Fetcher('http://example.com', {}, {
   handleResponse: async response => await response.json()
@@ -122,7 +120,7 @@ const fetcher = new Fetcher('http://example.com', {}, {
 fetcher.get().then(json => console.log(json));
 ```
 
-Reject in case of non `2xx` response:
+Example - throw error in case of non `2xx` response:
 ```js
 const fetcher = new Fetcher('http://example.com', {}, {
   handleResponse: async response => {
@@ -134,27 +132,25 @@ const fetcher = new Fetcher('http://example.com', {}, {
 });
 ```
 #### 5. Send requests to relative paths
-For `PathFetcher` the first parameter in all methods is always string path relative to base url:
+`PathFetcher` can send requests to different urls. 
+The first parameter in all methods is string - relative path attached to base url:
 ```js
 import {PathFetcher} from 'fetchers';
 
-// Set base url
 const fetcher = new PathFetcher('http://example.com');
 
 // GET http://example.com/get
-fetcher.get('/get')
-  .then(response => response.json());
+fetcher.get('/get').then(response => ...);
 
 // POST to http://example.com/post
-fetcher.post('/post', JSON.stringify(body))
-  .then(response => response.json());
+fetcher.post('/post', body).then(response => ...);
 ```
 
 ## API
-Full class and method descriptions are available in [API Reference](https://vitalets.github.io/fetchers/identifiers.html).
+[Full API Reference](https://vitalets.github.io/fetchers/identifiers.html).
 
 ## License
 MIT @ [Vitaliy Potapov](https://github.com/vitalets)
 
-[REST]: https://en.wikipedia.org/wiki/Representational_state_transfer
 [Fetch API]: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+[REST]: https://en.wikipedia.org/wiki/Representational_state_transfer
