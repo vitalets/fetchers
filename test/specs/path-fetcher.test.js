@@ -34,7 +34,7 @@ describe('PathFetcher', function () {
     it('DELETE', async function () {
       fetchMock.deleteOnce(url, {foo: 'bar'});
       const body = JSON.stringify({x: 1});
-      const json = await this.fetcher.del(path, body).then(r => r.json());
+      const json = await this.fetcher.delete(path, body).then(r => r.json());
       assert.deepEqual(fetchMock.lastOptions(url), {method: 'DELETE', body, headers});
       assert.deepEqual(json, {foo: 'bar'});
     });
@@ -77,7 +77,7 @@ describe('PathFetcher', function () {
     it('DELETE', async function () {
       fetchMock.deleteOnce(url, {foo: 'bar'});
       const body = JSON.stringify({x: 1});
-      const json = await this.fetcher.del(url, body).then(r => r.json());
+      const json = await this.fetcher.delete(url, body).then(r => r.json());
       assert.deepEqual(fetchMock.lastOptions(url), {method: 'DELETE', body, headers});
       assert.deepEqual(json, {foo: 'bar'});
     });

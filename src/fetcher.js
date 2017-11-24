@@ -61,8 +61,8 @@ export default class Fetcher extends PathFetcher {
    * @param {RequestOptions} [options] custom options
    * @returns {Promise<Response>}
    */
-  async del(body, options) {
-    return await super.del(null, body, options);
+  async delete(body, options) {
+    return await super.delete(null, body, options);
   }
 
   /**

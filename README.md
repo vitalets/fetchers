@@ -34,13 +34,13 @@ const fetcher = new Fetcher('http://example.com', {credentials: 'include'}, {
 fetcher.get().then(json => console.log(json));
 fetcher.post(data).then(json => console.log(json));
 fetcher.put(data).then(json => console.log(json));
-fetcher.del().then(json => console.log(json));
+fetcher.delete().then(json => console.log(json));
 ```
 
 ## Features
 The advantages over bare `.fetch()` are following:
 
-* Semantic REST methods: `get()`, `post()`, `put()`, `del()`, `head()` and `patch()`
+* Semantic REST methods: `get()`, `post()`, `put()`, `delete()`, `head()` and `patch()`
 * Convenient defaults for all methods:
   * Default url and options
   * Default request body handler, e.g. `JSON.stringify` 
@@ -76,7 +76,7 @@ const fetcher = new Fetcher('http://example.com');
 fetcher.get().then(...);
 fetcher.post(body).then(...);
 fetcher.put(body).then(...);
-fetcher.del().then(...);
+fetcher.delete().then(...);
 fetcher.head().then(...);
 fetcher.patch().then(...);
 ```

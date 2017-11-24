@@ -69,7 +69,7 @@ export default class PathFetcher {
    * @param {RequestOptions} [options] custom options
    * @returns {Promise<Response>}
    */
-  async del(path, body, options) {
+  async delete(path, body, options) {
     return this._fetch('DELETE', path, body, options);
   }
 
@@ -96,6 +96,7 @@ export default class PathFetcher {
   async patch(path, body, options) {
     return this._fetch('PATCH', path, body, options);
   }
+
   async _fetch(method, path, body, options) {
     const finalUrl = this._getFinalUrl(path);
     const finalOptions = this._getOptions(method, body, options);
@@ -104,6 +105,7 @@ export default class PathFetcher {
       ? await this._handlers.handleResponse(response, finalOptions)
       : response;
   }
+
   _getFinalUrl(path) {
     if (isAbsoluteUrl(path)) {
       return path;
@@ -115,6 +117,7 @@ export default class PathFetcher {
       return this._baseUrl;
     }
   }
+
   _getOptions(method, body, options) {
     const headers = Object.assign({}, this._defaultOptions.headers, options && options.headers);
     if (method !== 'GET' && this._handlers.handleRequestBody) {

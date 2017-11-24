@@ -32,7 +32,7 @@ describe('Fetcher', function () {
     it('DELETE', async function () {
       fetchMock.deleteOnce(url, {foo: 'bar'});
       const body = JSON.stringify({x: 1});
-      const json = await this.fetcher.del(body).then(r => r.json());
+      const json = await this.fetcher.delete(body).then(r => r.json());
       assert.deepEqual(fetchMock.lastOptions(url), {method: 'DELETE', body, headers});
       assert.deepEqual(json, {foo: 'bar'});
     });

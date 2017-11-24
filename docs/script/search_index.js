@@ -306,9 +306,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/fetcher.js~fetcher#del",
-    "class/src/fetcher.js~Fetcher.html#instance-method-del",
-    "src/fetcher.js~Fetcher#del",
+    "src/fetcher.js~fetcher#delete",
+    "class/src/fetcher.js~Fetcher.html#instance-method-delete",
+    "src/fetcher.js~Fetcher#delete",
     "method"
   ],
   [
@@ -372,9 +372,9 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
-    "src/path-fetcher.js~pathfetcher#del",
-    "class/src/path-fetcher.js~PathFetcher.html#instance-method-del",
-    "src/path-fetcher.js~PathFetcher#del",
+    "src/path-fetcher.js~pathfetcher#delete",
+    "class/src/path-fetcher.js~PathFetcher.html#instance-method-delete",
+    "src/path-fetcher.js~PathFetcher#delete",
     "method"
   ],
   [
